@@ -286,22 +286,23 @@ namespace ProyectoSO.Lib
                     // y a los que se les acabe el tiempo, son colocados en la cola de procesos listos.
                     for (byte i = 0; i < cantNucleos; i++)
                     {
-                        if (this.procesosEnEjecucion.TryGetValue(i, out var procesoEjec))
+                        if (!this.procesosEnEjecucion.TryGetValue(i, out var procesoEjec))
                         {
-                            (Proceso proceso, uint tiempoRestante) = procesoEjec;
-                            uint nuevoTiempo = tiempoRestante - min;
+                            continue;
+                        }
+                        (Proceso proceso, uint tiempoRestante) = procesoEjec;
+                        uint nuevoTiempo = tiempoRestante - min;
 
-                            this.procesosEnEjecucion.Remove(i);
-                            if (proceso.Actualizar(min))
-                            {
-                                this.procesos.Remove(proceso.Nombre);
-                            } else if (nuevoTiempo == 0)
-                            {
-                                this.procesosListos.AddFirst(procesoEjec.Item1);
-                            } else
-                            {
-                                this.procesosEnEjecucion.Add(i, (procesoEjec.Item1, nuevoTiempo));
-                            }
+                        this.procesosEnEjecucion.Remove(i);
+                        if (proceso.Actualizar(min))
+                        {
+                            this.procesos.Remove(proceso.Nombre);
+                        } else if (nuevoTiempo == 0)
+                        {
+                            this.procesosListos.AddFirst(procesoEjec.Item1);
+                        } else
+                        {
+                            this.procesosEnEjecucion.Add(i, (procesoEjec.Item1, nuevoTiempo));
                         }
                     }
 
@@ -309,7 +310,7 @@ namespace ProyectoSO.Lib
                     tiempo -= min;
                 }
 
-                return false;
+                return this.procesos.Count == 0;
             }
         }
     }
