@@ -13,9 +13,9 @@ namespace ProyectoSO.Tests
         {
         }
 
-        private Action<string>? printer = null;
+        private Action<string> printer = null;
 
-        private void Print(string text, params object?[] ob)
+        private void Print(string text, params object[] ob)
         {
             if (printer == null)
             {
@@ -45,13 +45,21 @@ namespace ProyectoSO.Tests
                     string bloqueado = keyValuePair.Value.Item1.Bloqueado
                         ? "bloqueado"
                         : "no bloqueado";
-                    string estado = keyValuePair.Value.Item2 switch
+                    string estado;
+                    switch (keyValuePair.Value.Item2)
                     {
-                        EstadoProceso.Listo =>       "listo",
-                        EstadoProceso.EnEjecucion => "en ejecución",
-                        EstadoProceso.Bloqueado =>   "bloqueado",
-                        _ => throw new Exception()
-                    };
+                        case EstadoProceso.Listo:
+                            estado = "listo";
+                            break;
+                        case EstadoProceso.EnEjecucion:
+                            estado = "en ejecución";
+                            break;
+                        case EstadoProceso.Bloqueado:
+                            estado = "bloqueado";
+                            break;
+                        default:
+                            throw new Exception();
+                    }
 
                     Print("\t{0,10} -> prioridad {1:D2}, {2,-12}, {3,-12}", nombre, prioridad, bloqueado, estado);
                 }
@@ -75,7 +83,7 @@ namespace ProyectoSO.Tests
                 StreamWriter writer = File.CreateText(test.Archivo);
                 printer = writer.WriteLine;
 
-                Scheduler sch = new(test.CantNucleos, test.Quantum);
+                Scheduler sch = new Scheduler(test.CantNucleos, test.Quantum);
                 Assert.IsEmpty(sch.InsertarProcesos(test.Procesos));
 
                 try

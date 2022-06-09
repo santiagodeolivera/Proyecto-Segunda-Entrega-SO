@@ -27,7 +27,7 @@ namespace ProyectoSO.Lib
             this.Bloqueado = datos.Bloqueado;
         }
 
-        public ProcesoDatos Datos => new(this.Prioridad, this.Bloqueado);
+        public ProcesoDatos Datos => new ProcesoDatos(this.Prioridad, this.Bloqueado);
 
         public bool Actualizar(uint tiempo)
         {

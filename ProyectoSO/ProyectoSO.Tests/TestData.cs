@@ -11,21 +11,27 @@ namespace ProyectoSO.Tests
     /// <param name="CantNucleos">La cantidad de núcleos del scheduler.</param>
     /// <param name="Quantum">El quantum del scheduler, en microsegundos.</param>
     /// <param name="Test">Una función que recibe el scheduler y lo utiliza.</param>
-    public record TestData(
-        string Archivo,
-        (string, byte, uint)[] Procesos,
-        byte CantNucleos,
-        uint Quantum,
-        Action<Scheduler> Test
-    )
+    public struct TestData
     {
+        public string Archivo;
+        public (string, byte, uint)[] Procesos;
+        public byte CantNucleos;
+        public uint Quantum;
+        public Action<Scheduler> Test;
+
         public TestData(
-                string archivo,
-                byte cantNucleos,
-                uint quantum,
-                Action<Scheduler> test,
-                params (string, byte, uint)[] procesos
-            ) : this(archivo, procesos, cantNucleos, quantum, test)
-        { }
+            string archivo,
+            byte cantNucleos,
+            uint quantum,
+            Action<Scheduler> test,
+            params (string, byte, uint)[] procesos
+        )
+        {
+            this.Archivo = archivo;
+            this.CantNucleos = cantNucleos;
+            this.Quantum = quantum;
+            this.Test = test;
+            this.Procesos = procesos;
+        }
     }
 }

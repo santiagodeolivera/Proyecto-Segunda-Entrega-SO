@@ -12,7 +12,7 @@ namespace ProyectoSO.Lib
          * Los métodos deben ejecutarse bajo mutua exclusión.
          */
 
-        private readonly object _lock = new();
+        private readonly object _lock = new object();
 
         /// <summary>
         /// Una estructura donde se almacenan todos los procesos del scheduler.
@@ -91,7 +91,7 @@ namespace ProyectoSO.Lib
                     return false;
                 }
 
-                Proceso proceso = new(nombre, prioridad, tiempoEjec);
+                Proceso proceso = new Proceso(nombre, prioridad, tiempoEjec);
                 this.procesos.Add(nombre, proceso);
                 this.procesosListos.AddFirst(proceso);
                 return true;

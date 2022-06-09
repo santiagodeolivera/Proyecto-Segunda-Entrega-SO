@@ -6,5 +6,15 @@ using System.Threading.Tasks;
 
 namespace ProyectoSO.Lib
 {
-    public record struct ProcesoDatos(byte Prioridad, bool Bloqueado);
+    public struct ProcesoDatos
+    {
+        public byte Prioridad;
+        public bool Bloqueado;
+
+        public ProcesoDatos(byte prioridad, bool bloqueado)
+        {
+            Prioridad = prioridad;
+            Bloqueado = bloqueado;
+        }
+    }
 }
