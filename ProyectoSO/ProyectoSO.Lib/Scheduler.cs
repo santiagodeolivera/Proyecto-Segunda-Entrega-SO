@@ -26,6 +26,7 @@ namespace ProyectoSO.Lib
 
         /// <summary>
         /// La cantidad de microsegundos del quantum.
+        /// El quantum es la cantidad de tiempo en la cual un proceso se encuentra en CPU antes de salir por timeout.
         /// </summary>
         private readonly uint quantum;
 
@@ -40,6 +41,8 @@ namespace ProyectoSO.Lib
         /// <summary>
         /// Los procesos en ejecución, siendo su llave la id del CPU donde se ejecuta,
         /// que va de 0 (inclusive) a cantNucleos (exclusive).
+        /// El valor representa el proceso en dicha CPU, junto con la cantidad de tiempo que le queda antes
+        /// de volver a la cola de procesos listos.
         /// </summary>
         private readonly IDictionary<byte, (Proceso, uint)> procesosEnEjecucion = new Dictionary<byte, (Proceso, uint)>();
 
@@ -54,6 +57,14 @@ namespace ProyectoSO.Lib
             this.quantum = quantum;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="procesos"></param>
+        /// <returns>
+        /// El conjunto de los nombres de los procesos que no pudieron insertarse en el scheduler
+        /// porque ya estaban en el scheduler.
+        /// </returns>
         public ISet<string> InsertarProcesos(ICollection<(string, byte, uint)> procesos)
         {
             lock (this._lock)
@@ -73,15 +84,18 @@ namespace ProyectoSO.Lib
 
         public bool InsertarProceso(string nombre, byte prioridad, uint tiempoEjec)
         {
-            if (this.procesos.ContainsKey(nombre))
+            lock (this._lock)
             {
-                return false;
-            }
+                if (this.procesos.ContainsKey(nombre))
+                {
+                    return false;
+                }
 
-            Proceso proceso = new(nombre, prioridad, tiempoEjec);
-            this.procesos.Add(nombre, proceso);
-            this.procesosListos.AddFirst(proceso);
-            return true;
+                Proceso proceso = new(nombre, prioridad, tiempoEjec);
+                this.procesos.Add(nombre, proceso);
+                this.procesosListos.AddFirst(proceso);
+                return true;
+            }
         }
 
         public bool ModificarProceso(string nombre, ProcesoDatos datos)
@@ -104,6 +118,13 @@ namespace ProyectoSO.Lib
                     {
                         if (!this.procesosListos.Remove(proceso))
                         {
+                            /*
+                             this.procesosEnEjecución es un diccionario, el cual cuenta como enumerable de pares clave-valor.
+                             La función Filter crea otro enumerable con los datos del anterior, los cuales cumplen una cierta condición.
+                                En este caso se usa para encontrar el par clave-valor cuyo valor tenga un proceso con el nombre especificado.
+                             La función First obtiene el primer elemento del enumerable.
+                             La propiedad Key obtiene la clave del par clave-valor.
+                             */
                             byte cpuId = this.procesosEnEjecucion.Where(pair => pair.Value.Item1.Nombre.Equals(nombre)).First().Key;
                             this.procesosEnEjecucion.Remove(cpuId);
                         }
@@ -120,6 +141,13 @@ namespace ProyectoSO.Lib
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>
+        /// Un diccionario con información de todos los procesos del scheduler,
+        /// para hacer la tabla en la interfaz gráfica.
+        /// </returns>
         public IDictionary<string, (ProcesoDatos, EstadoProceso)> TablaProcesos()
         {
             lock (this._lock)
@@ -139,9 +167,13 @@ namespace ProyectoSO.Lib
                     {
                         estadoProceso = EstadoProceso.EnEjecucion;
                     }
-                    else
+                    else if (this.procesosListos.Any(p => p.Nombre.Equals(nombre)))
                     {
                         estadoProceso = EstadoProceso.Listo;
+                    }
+                    else
+                    {
+                        throw new Exception("Situación inesperada");
                     }
 
                     res.Add(nombre, (proceso.Datos, estadoProceso));
@@ -167,6 +199,20 @@ namespace ProyectoSO.Lib
         {
             lock (this._lock)
             {
+                /*
+                 El método Select devuelve un enumerable que resulta en mapear los elementos del anterior en la función determinada.
+                 Ejemplo:
+                     n = [2, 3]
+                     n2 = n.Select(v => 2 * v)
+                     assert n2 == [4, 6]
+
+                 El método ToDictionary devuelve un diccionario a partir de un enumerable, en los cuales se define la clave y el valor
+                    mediante dos funciones.
+                 Ejemplo:
+                     arr = [4, 5, 6]
+                     dicc = arr.ToDictionary(v => v + 1, v => v - 2)
+                     assert dicc == {5: 3, 6: 4, 7: 5}
+                 */
                 return this.procesosEnEjecucion.Select(item =>
                 {
                     byte cpuId = item.Key;
@@ -181,6 +227,9 @@ namespace ProyectoSO.Lib
         {
             lock (this._lock)
             {
+                /*
+                 El método ToList transforma un enumerable en una lista de elementos.
+                 */
                 return this.procesosListos.Select(proceso => (proceso.Nombre, proceso.Datos)).ToList();
             }
         }
@@ -207,30 +256,30 @@ namespace ProyectoSO.Lib
                 while (tiempo > 0)
                 {
                     // Chequear cuánto tiempo se mantienen todos los procesos en la CPU sin hacer ningún cambio.
-                    uint? min = null;
+                    uint min = tiempo;
                     for (byte i = 0; i < cantNucleos; i++)
                     {
                         // Si hay CPUs sin procesos y procesos en la cola, se los asignan
-                        if (!this.procesosEnEjecucion.TryGetValue(i, out var procesoEjec) && this.procesosListos.Count > 0)
+                        if (!this.procesosEnEjecucion.TryGetValue(i, out var procesoEjec))
                         {
-                            Proceso proceso = this.procesosListos.Last();
-                            this.procesosListos.RemoveLast();
+                            if (this.procesosListos.Count > 0)
+                            {
+                                Proceso proceso = this.procesosListos.Last();
+                                this.procesosListos.RemoveLast();
 
-                            this.procesosEnEjecucion.Add(i, (proceso, this.quantum * proceso.Prioridad));
-                            procesoEjec = (proceso, this.quantum);
+                                this.procesosEnEjecucion.Add(i, (proceso, this.quantum * proceso.Prioridad));
+                                procesoEjec = (proceso, this.quantum * proceso.Prioridad);
+                            } else
+                            {
+                                continue;
+                            }
                         }
 
                         // Algoritmo usual para conseguir el mínimo tiempo de los tiempos de todos los procesos.
-                        if (min == null || min > procesoEjec.Item2)
+                        if (min > procesoEjec.Item2)
                         {
                             min = procesoEjec.Item2;
                         }
-                    }
-
-                    // Si no hay más procesos, se termina la ejecución.
-                    if (min is not uint min2)
-                    {
-                        return true;
                     }
 
                     // Restar a la cantidad de tiempo de cada proceso el mínimo encontrado,
@@ -240,10 +289,10 @@ namespace ProyectoSO.Lib
                         if (this.procesosEnEjecucion.TryGetValue(i, out var procesoEjec))
                         {
                             (Proceso proceso, uint tiempoRestante) = procesoEjec;
-                            uint nuevoTiempo = tiempoRestante - min2;
+                            uint nuevoTiempo = tiempoRestante - min;
 
                             this.procesosEnEjecucion.Remove(i);
-                            if (proceso.Actualizar(min2))
+                            if (proceso.Actualizar(min))
                             {
                                 this.procesos.Remove(proceso.Nombre);
                             } else if (nuevoTiempo == 0)
@@ -257,7 +306,7 @@ namespace ProyectoSO.Lib
                     }
 
                     // Restar dicha cantidad del tiempo al tiempo solicitado.
-                    tiempo -= min2;
+                    tiempo -= min;
                 }
 
                 return false;
