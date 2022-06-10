@@ -73,9 +73,20 @@ namespace ProyectoSO.Tests
             // Lista de tests para hacer
             TestData[] tests =
             {
-                new TestData("test1.txt", 1, 100, Test1Inner, ("A", 1, 1000), ("B", 2, 1000)),
-                new TestData("test2.txt", 2, 100, Test1Inner, ("A", 1, 1000), ("B", 2, 1000), ("C", 3, 4000)),
-                new TestData("test3.txt", 2, 100, Test1Inner, ("A", 1, 1000), ("B", 2, 1000), ("C", 3, 2000))
+                new TestData("test1.txt", 1, 100, Test1Inner,
+                    new ProcesoPlantilla("A", 1, false, 1000),
+                    new ProcesoPlantilla("B", 2, false, 1000)
+                ),
+                new TestData("test2.txt", 2, 100, Test1Inner,
+                    new ProcesoPlantilla("A", 1, false, 1000),
+                    new ProcesoPlantilla("B", 2, false, 1000),
+                    new ProcesoPlantilla("C", 3, false, 4000)
+                ),
+                new TestData("test3.txt", 2, 100, Test1Inner,
+                    new ProcesoPlantilla("A", 1, false, 1000),
+                    new ProcesoPlantilla("B", 2, false, 1000),
+                    new ProcesoPlantilla("C", 3, false, 2000)
+                )
             };
 
             foreach (TestData test in tests)

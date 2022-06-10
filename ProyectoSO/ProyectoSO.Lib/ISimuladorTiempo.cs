@@ -13,6 +13,6 @@ namespace ProyectoSO.Lib
         /// </summary>
         /// <param name="tiempo">El tiempo que se simula, en microsegundos.</param>
         /// <returns>Un valor relevante respecto a la actualización.</returns>
-        public T Actualizar(uint tiempo);
+        T Actualizar(uint tiempo);
     }
 }
