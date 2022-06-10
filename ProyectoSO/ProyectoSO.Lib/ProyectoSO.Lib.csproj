@@ -2,9 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
-    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
 </Project>

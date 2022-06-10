@@ -1,6 +1,7 @@
 ﻿using ProyectoSO.Lib;
 using System;
 using System.Collections.Generic;
+using ProyectoSO.Tests.TimedLock;
 
 namespace ProyectoSO.Tests
 {
@@ -14,8 +15,10 @@ namespace ProyectoSO.Tests
 
         /// <summary>
         /// Plantillas para los procesos que tendrá el scheduler.
+        /// El segundo elemento de la tupla representa un objeto
+        /// que determina cuándo bloquear el proceso y cuándo desbloquearlo.
         /// </summary>
-        public IEnumerable<ProcesoPlantilla> Procesos;
+        public IEnumerable<(ProcesoPlantilla, IEnumerator<LockAction>)> Procesos;
 
         /// <summary>
         /// La cantidad de núcleos del scheduler.
@@ -30,14 +33,14 @@ namespace ProyectoSO.Tests
         /// <summary>
         /// Una función que recibe el scheduler y lo utiliza.
         /// </summary>
-        public Action<Scheduler> Test;
+        public Action<Scheduler, ICollection<(string, IEnumerator<LockAction>)>> Test;
 
         public TestData(
             string archivo,
             byte cantNucleos,
             uint quantum,
-            Action<Scheduler> test,
-            params ProcesoPlantilla[] procesos
+            Action<Scheduler, ICollection<(string, IEnumerator<LockAction>)>> test,
+            params (ProcesoPlantilla, IEnumerator<LockAction>)[] procesos
         )
         {
             this.Archivo = archivo;

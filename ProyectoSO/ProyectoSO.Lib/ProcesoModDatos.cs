@@ -20,5 +20,8 @@ namespace ProyectoSO.Lib
             Bloqueado = bloqueado;
             
         }
+        public ProcesoModDatos(ProcesoDatos datos) : this(datos.Prioridad, datos.Bloqueado)
+        { }
+
     }
 }

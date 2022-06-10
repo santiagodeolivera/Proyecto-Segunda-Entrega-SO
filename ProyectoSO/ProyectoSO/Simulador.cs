@@ -16,8 +16,8 @@ namespace ProyectoSO
         {
             InitializeComponent();
             {
-                Point location = this.StartStopBtn.Location;
-                this.StartStopBtn.Location = new Point(location.X, (this.botonesPanel.Height - this.StartStopBtn.Height) / 2);
+//                Point location = this.StartStopBtn.Location;
+//                this.StartStopBtn.Location = new Point(location.X, (this.botonesPanel.Height - this.StartStopBtn.Height) / 2);
             }
         }
     }
