@@ -9,25 +9,34 @@ namespace ProyectoSO.Lib
     public class Proceso : ISimuladorTiempo<bool>
     {
         public readonly string Nombre;
+
         public byte Prioridad { get; private set; }
+
         public bool Bloqueado { get; private set; }
+
+        /// <summary>
+        /// Determina si este proceso fue creado por el kernel o por el usuario.
+        /// </summary>
+        public readonly bool Kernel;
+
         public uint TiempoRestante { get; private set; }
 
-        public Proceso(string nombre, byte prioridad, uint tiempoRestante)
+        public Proceso(ProcesoPlantilla plantilla)
         {
-            this.Nombre = nombre;
-            this.Prioridad = prioridad;
+            this.Nombre = plantilla.Nombre;
+            this.Prioridad = plantilla.Prioridad;
             this.Bloqueado = false;
-            this.TiempoRestante = tiempoRestante;
+            this.Kernel = plantilla.Kernel;
+            this.TiempoRestante = plantilla.TiempoRestante;
         }
 
-        public void Modificar(ProcesoDatos datos)
+        public void Modificar(ProcesoModDatos datos)
         {
             this.Prioridad = datos.Prioridad;
             this.Bloqueado = datos.Bloqueado;
         }
 
-        public ProcesoDatos Datos => new(this.Prioridad, this.Bloqueado);
+        public ProcesoDatos Datos => new ProcesoDatos(this.Prioridad, this.Bloqueado, this.Kernel);
 
         public bool Actualizar(uint tiempo)
         {

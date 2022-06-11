@@ -12,7 +12,7 @@ namespace ProyectoSO.Lib
          * Los métodos deben ejecutarse bajo mutua exclusión.
          */
 
-        private readonly object _lock = new();
+        private readonly object _lock = new object();
 
         /// <summary>
         /// Una estructura donde se almacenan todos los procesos del scheduler.
@@ -53,6 +53,11 @@ namespace ProyectoSO.Lib
 
         public Scheduler(byte cantNucleos, uint quantum)
         {
+            if (cantNucleos == 0 || quantum == 0)
+            {
+                throw new ArgumentException();
+            }
+
             this.cantNucleos = cantNucleos;
             this.quantum = quantum;
         }
@@ -65,16 +70,16 @@ namespace ProyectoSO.Lib
         /// El conjunto de los nombres de los procesos que no pudieron insertarse en el scheduler
         /// porque ya estaban en el scheduler.
         /// </returns>
-        public ISet<string> InsertarProcesos(ICollection<(string, byte, uint)> procesos)
+        public ISet<string> InsertarProcesos(IEnumerable<ProcesoPlantilla> procesos)
         {
             lock (this._lock)
             {
                 ISet<string> res = new HashSet<string>();
-                foreach ((string nombre, byte prioridad, uint tiempoEjec) in procesos)
+                foreach (ProcesoPlantilla plantilla in procesos)
                 {
-                    if (!this.InsertarProceso(nombre, prioridad, tiempoEjec))
+                    if (!this.InsertarProceso(plantilla))
                     {
-                        res.Add(nombre);
+                        res.Add(plantilla.Nombre);
                     }
                 }
 
@@ -82,23 +87,23 @@ namespace ProyectoSO.Lib
             }
         }
 
-        public bool InsertarProceso(string nombre, byte prioridad, uint tiempoEjec)
+        public bool InsertarProceso(ProcesoPlantilla plantilla)
         {
             lock (this._lock)
             {
-                if (this.procesos.ContainsKey(nombre))
+                if (this.procesos.ContainsKey(plantilla.Nombre))
                 {
                     return false;
                 }
 
-                Proceso proceso = new(nombre, prioridad, tiempoEjec);
-                this.procesos.Add(nombre, proceso);
+                Proceso proceso = new Proceso(plantilla);
+                this.procesos.Add(plantilla.Nombre, proceso);
                 this.procesosListos.AddFirst(proceso);
                 return true;
             }
         }
 
-        public bool ModificarProceso(string nombre, ProcesoDatos datos)
+        public bool ModificarProceso(string nombre, ProcesoModDatos datos)
         {
             lock (this._lock)
             {
