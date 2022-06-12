@@ -1,0 +1,296 @@
+
+Tabla tras 25 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 50 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 75 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 100 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 125 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 150 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 175 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 200 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 225 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 250 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 275 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 300 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 325 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 350 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 375 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 400 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 425 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 450 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 475 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 500 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 525 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 550 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 575 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 600 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 625 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 650 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 675 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 700 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 725 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 750 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 775 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 800 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 825 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 850 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 875 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 900 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 925 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 950 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 975 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 1000 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 1025 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 1050 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 1075 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 1100 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 1125 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 1150 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 1175 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 1200 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 1225 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 1250 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 1275 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 1300 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 1325 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 1350 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 1375 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 1400 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 1425 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 1450 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 1475 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+	                   B -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 1500 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+
+Tabla tras 1525 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+
+Tabla tras 1550 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+
+Tabla tras 1575 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+
+Tabla tras 1600 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+
+Tabla tras 1625 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+
+Tabla tras 1650 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+
+Tabla tras 1675 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+
+Tabla tras 1700 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+
+Tabla tras 1725 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+
+Tabla tras 1750 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+
+Tabla tras 1775 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+
+Tabla tras 1800 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+
+Tabla tras 1825 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+
+Tabla tras 1850 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+
+Tabla tras 1875 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+
+Tabla tras 1900 microsegundos:
+	                   A -> prioridad 01, no bloqueado, listo       
+
+Tabla tras 1925 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+
+Tabla tras 1950 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución
+
+Tabla tras 1975 microsegundos:
+	                   A -> prioridad 01, no bloqueado, en ejecución

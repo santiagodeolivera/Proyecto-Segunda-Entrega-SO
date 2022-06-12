@@ -58,18 +58,57 @@ namespace ProyectoSO.Tests
                         throw new Exception();
                 }
 
-                Print("\t{0,10} -> prioridad {1:D2}, {2,-12}, {3,-12}", nombre, prioridad, bloqueado, estado);
+                Print("\t{0,20} -> prioridad {1:D2}, {2,-12}, {3,-12}", nombre, prioridad, bloqueado, estado);
+            }
+        }
+
+        /// <summary>
+        /// Dependiendo del valor de lockAction, el valor Bloqueado de modDatos cambia o no.
+        /// </summary>
+        /// <param name="modDatos">El ProcesoModDatos a modificar.</param>
+        /// <param name="lockAction">El LockAction que determina cómo se modifica.</param>
+        /// <returns>true si hubo un bloqueo/desbloqueo en el proceso.</returns>
+        public static bool ModificarProcesoDatos(ref ProcesoModDatos modDatos, LockAction lockAction)
+        {
+            // Si se pide bloquear el proceso, se cambia Bloqueado a true,
+            // no hace nada si el proceso ya está bloqueado.
+            if (lockAction == LockAction.Lock)
+            {
+                modDatos.Bloqueado = true;
+                return true;
+            }
+            // Si se pide desbloquear el proceso, se cambia Bloqueado a false,
+            // no hace nada si el proceso ya está desbloqueado.
+            else if (lockAction == LockAction.Unlock)
+            {
+                modDatos.Bloqueado = false;
+                return true;
+            }
+            else
+            // Si no se pide nada, modDatos se mantiene intacto.
+            {
+                return false;
             }
         }
 
         private void Test1Inner(Scheduler sch, ICollection<(string, IEnumerator<LockAction>)> lockers)
         {
+            // Se impone un límite de 1000 iteraciones para evitar un bucle infinito
             for (int i = 1; i <= 1000; i++)
             {
+                // Se actualiza el scheduler como si hubieran pasado 25 microsegundos.
+                // Si el método devuelve true (o sea, si terminaron de ejecutarse todos los procesos),
+                //     se sale del bucle sin pasar por el código de abajo.
                 if (sch.Actualizar(25)) return;
+
+                // Se imprime la información de la tabla en el archivo.
                 Print();
                 Print("Tabla tras {0} microsegundos:", i * 25);
                 ImprimirTabla(sch);
+
+                // Se bloquean y desbloquean los procesos
+                // La variable modGuarda determina si se bloqueó/desbloqueó al menos un proceso,
+                //     y sirve para ver si hay que reimprimir la tabla.
                 bool modGuarda = false;
                 foreach ((string, IEnumerator<LockAction>) tupla in lockers)
                 {
@@ -78,20 +117,13 @@ namespace ProyectoSO.Tests
                     if (sch.BuscarProceso(nombre) is ProcesoDatos datos && locker.MoveNext())
                     {
                         ProcesoModDatos modDatos = new ProcesoModDatos(datos);
-                        switch (locker.Current)
-                        {
-                            case LockAction.Lock:
-                                modDatos.Bloqueado = true;
-                                modGuarda = true;
-                                break;
-                            case LockAction.Unlock:
-                                modDatos.Bloqueado = false;
-                                modGuarda = true;
-                                break;
-                        }
+                        modGuarda |= ModificarProcesoDatos(ref modDatos, locker.Current);
                         sch.ModificarProceso(nombre, modDatos);
                     }
                 }
+
+                // Si se bloqueó/desbloqueó al menos un proceso,
+                //     se imprime la información de la tabla en el archivo.
                 if (modGuarda)
                 {
                     Print();
@@ -99,6 +131,8 @@ namespace ProyectoSO.Tests
                     ImprimirTabla(sch);
                 }
             }
+
+            // Si se sale del bucle sin pasar por la sentencia "return", se tira un error.
             throw new Exception("Posible bucle infinito");
         }
 
@@ -126,17 +160,37 @@ namespace ProyectoSO.Tests
                     (new ProcesoPlantilla("A", 1, false, 1000), null),
                     (new ProcesoPlantilla("B", 2, false, 1000), null),
                     (new ProcesoPlantilla("C", 3, false, 2000), new TimedLockEnumerator(6, 2))
-                )
+                ),
+                new TestData("Test5.txt", 1, 100, Test1Inner,
+                    (new ProcesoPlantilla("Proceso 1", 1, false, 500), new TimedLockEnumerator(2, 1)),
+                    (new ProcesoPlantilla("Proceso 2", 2, false, 1000), new TimedLockEnumerator(2, 4)),
+                    (new ProcesoPlantilla("Proceso 3", 4, false, 2000), new TimedLockEnumerator(6, 2)))
             };
 
+            // Determinar en qué directorio se colocarán las salidas de los tests
+            string rutaDir;
+            {
+                DirectoryInfo dir = new DirectoryInfo(Directory.GetCurrentDirectory());
+                while (!dir.Name.Equals("ProyectoSO"))
+                {
+                    dir = dir.Parent;
+                }
+                rutaDir = Path.Combine(dir.FullName, "ProyectoSO.Tests", "Test_outputs");
+                Directory.CreateDirectory(rutaDir);
+            }
+
+            // Ejecutar cada test
             foreach (TestData test in tests)
             {
-                StreamWriter writer = File.CreateText(test.Archivo);
+                // Preparar el archivo
+                StreamWriter writer = File.CreateText(Path.Combine(rutaDir, test.Archivo));
                 printer = writer.WriteLine;
 
+                // Preparar el scheduler
                 Scheduler sch = new Scheduler(test.CantNucleos, test.Quantum);
                 Assert.IsEmpty(sch.InsertarProcesos(test.Procesos.Select(v => v.Item1)));
 
+                // Preparar los objetos que bloquean/desbloquean los procesos
                 ICollection<(string, IEnumerator<LockAction>)> lockers =
                     test.Procesos.Where(v => v.Item2 != null).Select(p => (p.Item1.Nombre, p.Item2)).ToList();
 
