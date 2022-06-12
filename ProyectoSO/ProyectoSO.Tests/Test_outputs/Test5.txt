@@ -1,0 +1,1243 @@
+
+Tabla tras 25 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 50 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 75 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 100 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 125 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 150 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 175 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 200 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 225 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 250 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 275 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 300 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 325 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 350 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 375 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 400 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 425 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 450 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 475 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 500 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 525 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 550 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 575 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 600 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 625 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 650 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 675 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 700 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 725 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 750 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 775 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 800 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 825 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 850 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 875 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 900 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 925 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 950 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 975 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 1000 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 1025 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 1050 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1075 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1100 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1125 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1150 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 1175 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 1200 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 1225 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 1250 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 1275 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1300 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1325 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1350 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 1375 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 1400 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 1425 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1450 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1475 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1500 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1525 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1550 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 1575 microsegundos:
+	           Proceso 1 -> prioridad 01, bloqueado   , bloqueado   
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, listo       
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 1600 microsegundos:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 1 -> prioridad 01, no bloqueado, en ejecución
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 1625 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 1650 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1675 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1700 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1725 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1750 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 1775 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 1800 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 1825 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 1850 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 1875 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1900 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1925 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 1950 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 1975 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 2000 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 2025 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2050 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2075 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2100 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2125 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2150 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 2175 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 2200 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 2225 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2250 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2275 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2300 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2325 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2350 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 2375 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 2400 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 2425 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 2450 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 2475 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2500 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2525 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2550 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 2575 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 2600 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 2625 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2650 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2675 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2700 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2725 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2750 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 2775 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 2800 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 2825 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2850 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2875 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2900 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2925 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 2950 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 2975 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras 3000 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 3025 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 3050 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, listo       
+
+Tabla tras 3075 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 3100 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+	           Proceso 3 -> prioridad 04, no bloqueado, en ejecución
+
+Tabla tras 3125 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3150 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 3175 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 3200 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3225 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3250 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3275 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3300 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 3325 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 3350 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3375 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3400 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3425 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3450 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 3475 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 3500 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3525 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3550 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3575 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3600 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 3625 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 3650 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3675 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3700 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3725 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3750 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 3775 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 3800 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3825 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3850 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3875 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3900 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 3925 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 3950 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 3975 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4000 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4025 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4050 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 4075 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 4100 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4125 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4150 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4175 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4200 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 4225 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 4250 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4275 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4300 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4325 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4350 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 4375 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 4400 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4425 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4450 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4475 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4500 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 4525 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 4550 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4575 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4600 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4625 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4650 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 4675 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 4700 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4725 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4750 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4775 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4800 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 4825 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 4850 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4875 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4900 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4925 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 4950 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 4975 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 5000 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 5025 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 5050 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 5075 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 5100 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 5125 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras 5150 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 5175 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 5200 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 5225 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras 5250 microsegundos:
+	           Proceso 2 -> prioridad 02, bloqueado   , bloqueado   
+
+Tabla tras bloqueo/desbloqueo:
+	           Proceso 2 -> prioridad 02, no bloqueado, listo       
+
+Tabla tras 5275 microsegundos:
+	           Proceso 2 -> prioridad 02, no bloqueado, en ejecución
