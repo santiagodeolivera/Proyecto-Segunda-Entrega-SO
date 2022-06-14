@@ -28,156 +28,135 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.procesosListosList = new System.Windows.Forms.ListBox();
-            this.procesosListosLabel = new System.Windows.Forms.Label();
-            this.procesosCpuList = new System.Windows.Forms.ListBox();
-            this.procesosCpuLabel = new System.Windows.Forms.Label();
-            this.procesosBloqueadosLabel = new System.Windows.Forms.Label();
-            this.procesosBloqueadosList = new System.Windows.Forms.ListBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.ColaProcesos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.colaEJEc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.procBloc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
-            // procesosListosList
+            // dataGridView2
             // 
-            this.procesosListosList.Font = new System.Drawing.Font("Consolas", 10F);
-            this.procesosListosList.FormattingEnabled = true;
-            this.procesosListosList.ItemHeight = 20;
-            this.procesosListosList.Location = new System.Drawing.Point(19, 30);
-            this.procesosListosList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.procesosListosList.Name = "procesosListosList";
-            this.procesosListosList.Size = new System.Drawing.Size(150, 244);
-            this.procesosListosList.TabIndex = 0;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColaProcesos});
+            this.dataGridView2.Location = new System.Drawing.Point(12, 12);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(161, 207);
+            this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // procesosListosLabel
+            // ColaProcesos
             // 
-            this.procesosListosLabel.AutoSize = true;
-            this.procesosListosLabel.Location = new System.Drawing.Point(15, 3);
-            this.procesosListosLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.procesosListosLabel.Name = "procesosListosLabel";
-            this.procesosListosLabel.Size = new System.Drawing.Size(263, 23);
-            this.procesosListosLabel.TabIndex = 1;
-            this.procesosListosLabel.Text = "Cola de procesos listos";
+            this.ColaProcesos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColaProcesos.HeaderText = "Cola Procesos Listos";
+            this.ColaProcesos.Name = "ColaProcesos";
+            this.ColaProcesos.Width = 119;
             // 
-            // procesosCpuList
+            // dataGridView3
             // 
-            this.procesosCpuList.Font = new System.Drawing.Font("Consolas", 10F);
-            this.procesosCpuList.FormattingEnabled = true;
-            this.procesosCpuList.ItemHeight = 20;
-            this.procesosCpuList.Location = new System.Drawing.Point(365, 46);
-            this.procesosCpuList.Margin = new System.Windows.Forms.Padding(4);
-            this.procesosCpuList.Name = "procesosCpuList";
-            this.procesosCpuList.Size = new System.Drawing.Size(139, 124);
-            this.procesosCpuList.TabIndex = 2;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colaEJEc});
+            this.dataGridView3.Location = new System.Drawing.Point(191, 12);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(151, 207);
+            this.dataGridView3.TabIndex = 1;
             // 
-            // procesosCpuLabel
+            // colaEJEc
             // 
-            this.procesosCpuLabel.AutoSize = true;
-            this.procesosCpuLabel.Location = new System.Drawing.Point(329, 3);
-            this.procesosCpuLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.procesosCpuLabel.Name = "procesosCpuLabel";
-            this.procesosCpuLabel.Size = new System.Drawing.Size(175, 23);
-            this.procesosCpuLabel.TabIndex = 3;
-            this.procesosCpuLabel.Text = "Procesos en CPU";
+            this.colaEJEc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.colaEJEc.HeaderText = "Cola Procesos En ejecucion";
+            this.colaEJEc.Name = "colaEJEc";
+            this.colaEJEc.Width = 109;
             // 
-            // procesosBloqueadosLabel
+            // dataGridView4
             // 
-            this.procesosBloqueadosLabel.AutoSize = true;
-            this.procesosBloqueadosLabel.Location = new System.Drawing.Point(248, 234);
-            this.procesosBloqueadosLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.procesosBloqueadosLabel.Name = "procesosBloqueadosLabel";
-            this.procesosBloqueadosLabel.Size = new System.Drawing.Size(219, 23);
-            this.procesosBloqueadosLabel.TabIndex = 4;
-            this.procesosBloqueadosLabel.Text = "Procesos bloqueados";
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.procBloc});
+            this.dataGridView4.Location = new System.Drawing.Point(363, 12);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(151, 207);
+            this.dataGridView4.TabIndex = 2;
+            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
-            // procesosBloqueadosList
+            // procBloc
             // 
-            this.procesosBloqueadosList.Font = new System.Drawing.Font("Consolas", 10F);
-            this.procesosBloqueadosList.FormattingEnabled = true;
-            this.procesosBloqueadosList.ItemHeight = 20;
-            this.procesosBloqueadosList.Location = new System.Drawing.Point(252, 275);
-            this.procesosBloqueadosList.Margin = new System.Windows.Forms.Padding(4);
-            this.procesosBloqueadosList.Name = "procesosBloqueadosList";
-            this.procesosBloqueadosList.Size = new System.Drawing.Size(150, 164);
-            this.procesosBloqueadosList.TabIndex = 5;
+            this.procBloc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.procBloc.HeaderText = "Cola Procesos Bloqueados";
+            this.procBloc.Name = "procBloc";
+            this.procBloc.Width = 145;
             // 
-            // tableLayoutPanel1
+            // button1
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel2, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.panel3, 2, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1158, 449);
-            this.tableLayoutPanel1.TabIndex = 6;
+            this.button1.Image = global::ProyectoSO.Properties.Resources.icons8_play_or_pause_button_48;
+            this.button1.Location = new System.Drawing.Point(154, 252);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(48, 43);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
             // 
-            // panel1
+            // button2
             // 
-            this.panel1.Controls.Add(this.procesosListosLabel);
-            this.panel1.Controls.Add(this.procesosCpuLabel);
-            this.panel1.Controls.Add(this.procesosListosList);
-            this.panel1.Controls.Add(this.procesosBloqueadosLabel);
-            this.panel1.Controls.Add(this.procesosBloqueadosList);
-            this.panel1.Controls.Add(this.procesosCpuList);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(573, 443);
-            this.panel1.TabIndex = 0;
+            this.button2.Image = global::ProyectoSO.Properties.Resources.icons8_plus_48;
+            this.button2.Location = new System.Drawing.Point(226, 252);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(47, 43);
+            this.button2.TabIndex = 4;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // panel2
+            // button3
             // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(582, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(283, 443);
-            this.panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(871, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(284, 443);
-            this.panel3.TabIndex = 2;
+            this.button3.Image = global::ProyectoSO.Properties.Resources.icons8_configuration_24;
+            this.button3.Location = new System.Drawing.Point(295, 254);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(47, 41);
+            this.button3.TabIndex = 5;
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // Simulador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 473);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Font = new System.Drawing.Font("Consolas", 12F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ClientSize = new System.Drawing.Size(571, 391);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dataGridView4);
+            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.dataGridView2);
             this.Name = "Simulador";
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.Simulador_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox procesosListosList;
-        private System.Windows.Forms.Label procesosListosLabel;
-        private System.Windows.Forms.ListBox procesosCpuList;
-        private System.Windows.Forms.Label procesosCpuLabel;
-        private System.Windows.Forms.Label procesosBloqueadosLabel;
-        private System.Windows.Forms.ListBox procesosBloqueadosList;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColaProcesosListos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColaProcesosEnEjecucion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColaDeProcesosBloqueados;
+        private System.Windows.Forms.Button config;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColaProcesos;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colaEJEc;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn procBloc;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
