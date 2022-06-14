@@ -32,11 +32,10 @@ namespace ProyectoSO.Lib
 
         /// <summary>
         /// La cola de procesos listos.
-        /// 
-        /// Es una LinkedList en vez de un Queue porque se debe poder sacar los procesos en medio cuando se bloquean,
-        /// lo cual no está permitido por un Queue.
+        /// Se implementa como una clase aparte para controlar mejor
+        /// las operaciones hechas sobre la misma.
         /// </summary>
-        private readonly LinkedList<Proceso> procesosListos = new LinkedList<Proceso>();
+        private readonly ColaDePrioridades procesosListos = new ColaDePrioridades();
 
         /// <summary>
         /// Los procesos en ejecución, siendo su llave la id del CPU donde se ejecuta,
@@ -98,7 +97,7 @@ namespace ProyectoSO.Lib
 
                 Proceso proceso = new Proceso(plantilla);
                 this.procesos.Add(plantilla.Nombre, proceso);
-                this.procesosListos.AddFirst(proceso);
+                this.procesosListos.Insertar(proceso);
                 return true;
             }
         }
@@ -114,14 +113,14 @@ namespace ProyectoSO.Lib
                     if (proceso.Bloqueado && !datos.Bloqueado)
                     {
                         this.procesosBloqueados.Remove(nombre);
-                        this.procesosListos.AddFirst(proceso);
+                        this.procesosListos.Insertar(proceso);
                     }
 
                     // Si el proceso pasa de desbloqueado a bloqueado,
                     // se saca de las otras dos estructuras y se pasa a procesos bloqueados.
                     if (!proceso.Bloqueado && datos.Bloqueado)
                     {
-                        if (!this.procesosListos.Remove(proceso))
+                        if (!this.procesosListos.Remover(proceso))
                         {
                             /*
                              this.procesosEnEjecución es un diccionario, el cual cuenta como enumerable de pares clave-valor.
@@ -267,13 +266,12 @@ namespace ProyectoSO.Lib
                         // Si hay CPUs sin procesos y procesos en la cola, se los asignan
                         if (!this.procesosEnEjecucion.TryGetValue(i, out var procesoEjec))
                         {
-                            if (this.procesosListos.Count > 0)
+                            if (this.procesosListos.Tamaño > 0)
                             {
-                                Proceso proceso = this.procesosListos.Last();
-                                this.procesosListos.RemoveLast();
+                                Proceso proceso = this.procesosListos.Pop();
 
-                                this.procesosEnEjecucion.Add(i, (proceso, this.quantum * proceso.Prioridad));
-                                procesoEjec = (proceso, this.quantum * proceso.Prioridad);
+                                this.procesosEnEjecucion.Add(i, (proceso, this.quantum));
+                                procesoEjec = (proceso, this.quantum);
                             } else
                             {
                                 continue;
@@ -304,7 +302,7 @@ namespace ProyectoSO.Lib
                             this.procesos.Remove(proceso.Nombre);
                         } else if (nuevoTiempo == 0)
                         {
-                            this.procesosListos.AddFirst(procesoEjec.Item1);
+                            this.procesosListos.Insertar(procesoEjec.Item1);
                         } else
                         {
                             this.procesosEnEjecucion.Add(i, (procesoEjec.Item1, nuevoTiempo));
