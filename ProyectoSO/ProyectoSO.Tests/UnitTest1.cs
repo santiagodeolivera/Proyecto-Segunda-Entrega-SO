@@ -49,7 +49,7 @@ namespace ProyectoSO.Tests
                         estado = "listo";
                         break;
                     case EstadoProceso.EnEjecucion:
-                        estado = "en ejecución";
+                        estado = "en ejecuciï¿½n";
                         break;
                     case EstadoProceso.Bloqueado:
                         estado = "bloqueado";
@@ -66,19 +66,19 @@ namespace ProyectoSO.Tests
         /// Dependiendo del valor de lockAction, el valor Bloqueado de modDatos cambia o no.
         /// </summary>
         /// <param name="modDatos">El ProcesoModDatos a modificar.</param>
-        /// <param name="lockAction">El LockAction que determina cómo se modifica.</param>
+        /// <param name="lockAction">El LockAction que determina cï¿½mo se modifica.</param>
         /// <returns>true si hubo un bloqueo/desbloqueo en el proceso.</returns>
         public static bool ModificarProcesoDatos(ref ProcesoModDatos modDatos, LockAction lockAction)
         {
             // Si se pide bloquear el proceso, se cambia Bloqueado a true,
-            // no hace nada si el proceso ya está bloqueado.
+            // no hace nada si el proceso ya estï¿½ bloqueado.
             if (lockAction == LockAction.Lock)
             {
                 modDatos.Bloqueado = true;
                 return true;
             }
             // Si se pide desbloquear el proceso, se cambia Bloqueado a false,
-            // no hace nada si el proceso ya está desbloqueado.
+            // no hace nada si el proceso ya estï¿½ desbloqueado.
             else if (lockAction == LockAction.Unlock)
             {
                 modDatos.Bloqueado = false;
@@ -93,21 +93,21 @@ namespace ProyectoSO.Tests
 
         private void Test1Inner(Scheduler sch, ICollection<(string, IEnumerator<LockAction>)> lockers)
         {
-            // Se impone un límite de 1000 iteraciones para evitar un bucle infinito
+            // Se impone un lï¿½mite de 1000 iteraciones para evitar un bucle infinito
             for (int i = 1; i <= 1000; i++)
             {
                 // Se actualiza el scheduler como si hubieran pasado 25 microsegundos.
-                // Si el método devuelve true (o sea, si terminaron de ejecutarse todos los procesos),
-                //     se sale del bucle sin pasar por el código de abajo.
+                // Si el mï¿½todo devuelve true (o sea, si terminaron de ejecutarse todos los procesos),
+                //     se sale del bucle sin pasar por el cï¿½digo de abajo.
                 if (sch.Actualizar(25)) return;
 
-                // Se imprime la información de la tabla en el archivo.
+                // Se imprime la informaciï¿½n de la tabla en el archivo.
                 Print();
                 Print("Tabla tras {0} microsegundos:", i * 25);
                 ImprimirTabla(sch);
 
                 // Se bloquean y desbloquean los procesos
-                // La variable modGuarda determina si se bloqueó/desbloqueó al menos un proceso,
+                // La variable modGuarda determina si se bloqueï¿½/desbloqueï¿½ al menos un proceso,
                 //     y sirve para ver si hay que reimprimir la tabla.
                 bool modGuarda = false;
                 foreach ((string, IEnumerator<LockAction>) tupla in lockers)
@@ -122,8 +122,8 @@ namespace ProyectoSO.Tests
                     }
                 }
 
-                // Si se bloqueó/desbloqueó al menos un proceso,
-                //     se imprime la información de la tabla en el archivo.
+                // Si se bloqueï¿½/desbloqueï¿½ al menos un proceso,
+                //     se imprime la informaciï¿½n de la tabla en el archivo.
                 if (modGuarda)
                 {
                     Print();
@@ -167,7 +167,7 @@ namespace ProyectoSO.Tests
                     (new ProcesoPlantilla("Proceso 3", 4, false, 2000), new TimedLockEnumerator(6, 2)))
             };
 
-            // Determinar en qué directorio se colocarán las salidas de los tests
+            // Determinar en quï¿½ directorio se colocarï¿½n las salidas de los tests
             string rutaDir;
             {
                 DirectoryInfo dir = new DirectoryInfo(Directory.GetCurrentDirectory());
