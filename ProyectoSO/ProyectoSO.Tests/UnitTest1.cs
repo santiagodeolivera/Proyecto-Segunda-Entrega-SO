@@ -58,7 +58,9 @@ namespace ProyectoSO.Tests
                         throw new Exception();
                 }
 
-                Print("\t{0,20} -> prioridad {1:D2}, {2,-12}, {3,-12}", nombre, prioridad, bloqueado, estado);
+                string kernelStr = keyValuePair.Value.Item1.Kernel ? "(kernel)" : "";
+
+                Print("{0,8}{1,20} -> prioridad {2:D2}, {3,-12}, {4,-12}", kernelStr, nombre, prioridad, bloqueado, estado);
             }
         }
 
@@ -163,8 +165,12 @@ namespace ProyectoSO.Tests
                 ),
                 new TestData("Test5.txt", 1, 100, Test1Inner,
                     (new ProcesoPlantilla("Proceso 1", 1, false, 500), new TimedLockEnumerator(2, 1)),
-                    (new ProcesoPlantilla("Proceso 2", 2, false, 1000), new TimedLockEnumerator(2, 4)),
-                    (new ProcesoPlantilla("Proceso 3", 4, false, 2000), new TimedLockEnumerator(6, 2)))
+                    (new ProcesoPlantilla("Proceso 2", 4, false, 1000), new TimedLockEnumerator(2, 1)),
+                    (new ProcesoPlantilla("Proceso 3", 2, false, 2000), new TimedLockEnumerator(6, 2))),
+                new TestData("Test6.txt", 1, 100, Test1Inner,
+                    (new ProcesoPlantilla("Proceso 1", 1, false, 500), null),
+                    (new ProcesoPlantilla("Proceso 2", 4, true,  1000), null),
+                    (new ProcesoPlantilla("Proceso 3", 2, false, 2000), null))
             };
 
             // Determinar en qu� directorio se colocar�n las salidas de los tests
