@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
+using System.Reflection;
 using ProyectoSO.Tests.TimedLock;
 
 namespace ProyectoSO.Tests
@@ -49,7 +50,7 @@ namespace ProyectoSO.Tests
                         estado = "listo";
                         break;
                     case EstadoProceso.EnEjecucion:
-                        estado = "en ejecuci�n";
+                        estado = "en ejecucion";
                         break;
                     case EstadoProceso.Bloqueado:
                         estado = "bloqueado";
@@ -95,6 +96,9 @@ namespace ProyectoSO.Tests
 
         private void Test1Inner(Scheduler sch, ICollection<(string, IEnumerator<LockAction>)> lockers)
         {
+            Print("Tabla inicial:");
+            ImprimirTabla(sch);
+
             // Se impone un l�mite de 1000 iteraciones para evitar un bucle infinito
             for (int i = 1; i <= 1000; i++)
             {
@@ -176,11 +180,15 @@ namespace ProyectoSO.Tests
             // Determinar en qu� directorio se colocar�n las salidas de los tests
             string rutaDir;
             {
-                DirectoryInfo dir = new DirectoryInfo(Directory.GetCurrentDirectory());
+                DirectoryInfo dir = new DirectoryInfo(
+                    Path.GetDirectoryName(
+                        Assembly.GetExecutingAssembly().Location));
+
                 while (!dir.Name.Equals("ProyectoSO"))
                 {
                     dir = dir.Parent;
                 }
+
                 rutaDir = Path.Combine(dir.FullName, "ProyectoSO.Tests", "Test_outputs");
                 Directory.CreateDirectory(rutaDir);
             }

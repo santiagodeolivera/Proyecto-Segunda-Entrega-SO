@@ -13,70 +13,52 @@ namespace ProyectoSO.Lib
     /// Utiliza una LinkedList en vez de un Queue porque se debe poder sacar los
     /// procesos en medio cuando se bloquean, e insertarlos de acuerdo a su prioridad.
     /// </summary>
-    public class ColaDePrioridades : IEnumerable<Proceso>
+    public class ColaDePrioridades : IColaDePrioridades
     {
         private readonly LinkedList<Proceso> lista = new LinkedList<Proceso>();
-        public uint Tamaño { get; private set; } = 0;
 
-        private static uint posicionarProceso(byte prioridad, uint tamaño)
-            => (uint)Math.Round((double)(prioridad - 1) * tamaño / 98);
-
-        public void Insertar(Proceso proceso)
+        public void Push(Proceso proceso)
         {
-            uint pos = posicionarProceso(proceso.Prioridad, this.Tamaño);
-
-            if (pos == 0)
+            if (this.lista.Count == 0)
             {
                 this.lista.AddFirst(proceso);
-            } else
-            {
-                LinkedListNode<Proceso> aux = this.lista.First;
-                pos--;
-                while (pos > 0 && aux != null)
-                {
-                    aux = aux.Next;
-                    pos--;
-                }
-
-                if (aux == null)
-                {
-                    this.lista.AddLast(proceso);
-                } else
-                {
-                    this.lista.AddAfter(aux, proceso);
-                }
+                return;
             }
 
-            this.Tamaño++;
-        }
-
-        public bool Remover(Proceso proceso)
-        {
-            if (this.lista.Remove(proceso))
+            LinkedListNode<Proceso> after = this.lista.Last;
+            if (after.Value.Prioridad < proceso.Prioridad)
             {
-                this.Tamaño--;
-                return true;
+                this.lista.AddLast(proceso);
+                return;
             }
 
-            return false;
+            while (after.Previous != null &&
+                after.Previous.Value.Prioridad > proceso.Prioridad)
+            {
+                after = after.Previous;
+            }
+            this.lista.AddBefore(after, proceso);
         }
 
         public Proceso Pop()
         {
+            if (this.lista.Count == 0)
+            {
+                return null;
+            }
+
             Proceso res = this.lista.Last();
             this.lista.RemoveLast();
-            this.Tamaño--;
             return res;
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return ((IEnumerable)lista).GetEnumerator();
-        }
-        public IEnumerator<Proceso> GetEnumerator()
-        {
-            return ((IEnumerable<Proceso>)lista).GetEnumerator();
-        }
+        public bool Remove(Proceso proceso)
+            => this.lista.Remove(proceso);
 
+        IEnumerator<Proceso> IEnumerable<Proceso>.GetEnumerator()
+            => (this.lista as IEnumerable<Proceso>).GetEnumerator();
+
+        IEnumerator IEnumerable.GetEnumerator()
+            => (this.lista as IEnumerable).GetEnumerator();
     }
 }
