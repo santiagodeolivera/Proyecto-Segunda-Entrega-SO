@@ -4,6 +4,8 @@ namespace ProyectoSO
 {
     public partial class PrincipalForm : Form
     {
+        private Simulador simulador = null;
+
         public PrincipalForm()
         {
             InitializeComponent();
@@ -78,7 +80,8 @@ namespace ProyectoSO
 
             }
 
-            MessageBox.Show("Iniciando simulador... :P");
+            this.simulador = new Simulador(new Lib.Scheduler(cantNucleos, quantum));
+            this.simulador.ShowDialog();
         }
     }
 }

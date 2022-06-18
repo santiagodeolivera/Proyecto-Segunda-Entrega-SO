@@ -28,45 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.checkKernel = new System.Windows.Forms.CheckBox();
+            this.numPrioridadProceso = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.ConfigProcess = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ConfigPrioridad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ConfigKernel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtNombreProceso = new System.Windows.Forms.TextBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnBorrarTabla = new System.Windows.Forms.Button();
+            this.btnCargarProcesos = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.numTiempoEjec = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrioridadProceso)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTiempoEjec)).BeginInit();
             this.SuspendLayout();
             // 
-            // checkBox1
+            // checkKernel
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(523, 148);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 25;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkKernel.AutoSize = true;
+            this.checkKernel.Location = new System.Drawing.Point(697, 182);
+            this.checkKernel.Margin = new System.Windows.Forms.Padding(4);
+            this.checkKernel.Name = "checkKernel";
+            this.checkKernel.Size = new System.Drawing.Size(18, 17);
+            this.checkKernel.TabIndex = 25;
+            this.checkKernel.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // numPrioridadProceso
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(477, 92);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(126, 20);
-            this.numericUpDown1.TabIndex = 22;
+            this.numPrioridadProceso.Location = new System.Drawing.Point(636, 113);
+            this.numPrioridadProceso.Margin = new System.Windows.Forms.Padding(4);
+            this.numPrioridadProceso.Name = "numPrioridadProceso";
+            this.numPrioridadProceso.Size = new System.Drawing.Size(168, 22);
+            this.numPrioridadProceso.TabIndex = 22;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(512, 125);
+            this.label3.Location = new System.Drawing.Point(683, 154);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.Size = new System.Drawing.Size(45, 16);
             this.label3.TabIndex = 21;
             this.label3.Text = "Kernel";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -74,110 +76,127 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(477, 76);
+            this.label2.Location = new System.Drawing.Point(636, 94);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.Size = new System.Drawing.Size(62, 16);
             this.label2.TabIndex = 20;
             this.label2.Text = "Prioridad";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(477, 28);
+            this.label1.Location = new System.Drawing.Point(636, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
+            this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 19;
             this.label1.Text = "Proceso";
             // 
-            // textBox1
+            // txtNombreProceso
             // 
-            this.textBox1.Location = new System.Drawing.Point(477, 44);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 20);
-            this.textBox1.TabIndex = 18;
+            this.txtNombreProceso.Location = new System.Drawing.Point(636, 54);
+            this.txtNombreProceso.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreProceso.MaxLength = 20;
+            this.txtNombreProceso.Name = "txtNombreProceso";
+            this.txtNombreProceso.Size = new System.Drawing.Size(167, 22);
+            this.txtNombreProceso.TabIndex = 18;
             // 
-            // dataGridView1
+            // btnAceptar
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ConfigProcess,
-            this.ConfigPrioridad,
-            this.ConfigKernel});
-            this.dataGridView1.Location = new System.Drawing.Point(33, 29);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(416, 243);
-            this.dataGridView1.TabIndex = 17;
+            this.btnAceptar.Image = global::ProyectoSO.Properties.Resources.icons8_done_48;
+            this.btnAceptar.Location = new System.Drawing.Point(630, 311);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(64, 59);
+            this.btnAceptar.TabIndex = 23;
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // button1
+            // btnBorrarTabla
             // 
-            this.button1.Image = global::ProyectoSO.Properties.Resources.icons8_done_48;
-            this.button1.Location = new System.Drawing.Point(475, 172);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(48, 48);
-            this.button1.TabIndex = 23;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBorrarTabla.Image = global::ProyectoSO.Properties.Resources.icons8_close_48;
+            this.btnBorrarTabla.Location = new System.Drawing.Point(740, 311);
+            this.btnBorrarTabla.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBorrarTabla.Name = "btnBorrarTabla";
+            this.btnBorrarTabla.Size = new System.Drawing.Size(64, 59);
+            this.btnBorrarTabla.TabIndex = 24;
+            this.btnBorrarTabla.UseVisualStyleBackColor = true;
+            this.btnBorrarTabla.Click += new System.EventHandler(this.btnBorrarTabla_Click);
             // 
-            // button2
+            // btnCargarProcesos
             // 
-            this.button2.Image = global::ProyectoSO.Properties.Resources.icons8_close_48;
-            this.button2.Location = new System.Drawing.Point(553, 172);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(48, 48);
-            this.button2.TabIndex = 24;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCargarProcesos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCargarProcesos.FlatAppearance.BorderSize = 5;
+            this.btnCargarProcesos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
+            this.btnCargarProcesos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnCargarProcesos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCargarProcesos.Location = new System.Drawing.Point(299, 386);
+            this.btnCargarProcesos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCargarProcesos.Name = "btnCargarProcesos";
+            this.btnCargarProcesos.Size = new System.Drawing.Size(189, 32);
+            this.btnCargarProcesos.TabIndex = 26;
+            this.btnCargarProcesos.Text = "Cargar Procesos";
+            this.btnCargarProcesos.UseVisualStyleBackColor = true;
+            this.btnCargarProcesos.Click += new System.EventHandler(this.btnCargarProcesos_Click);
             // 
-            // ConfigProcess
+            // listBox1
             // 
-            this.ConfigProcess.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ConfigProcess.HeaderText = "Procesos";
-            this.ConfigProcess.Name = "ConfigProcess";
+            this.listBox1.Font = new System.Drawing.Font("Consolas", 8F);
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Items.AddRange(new object[] {
+            ""});
+            this.listBox1.Location = new System.Drawing.Point(12, 12);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(595, 349);
+            this.listBox1.TabIndex = 27;
             // 
-            // ConfigPrioridad
+            // numTiempoEjec
             // 
-            this.ConfigPrioridad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ConfigPrioridad.HeaderText = "Prioridad";
-            this.ConfigPrioridad.Name = "ConfigPrioridad";
+            this.numTiempoEjec.Location = new System.Drawing.Point(630, 250);
+            this.numTiempoEjec.Margin = new System.Windows.Forms.Padding(4);
+            this.numTiempoEjec.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numTiempoEjec.Name = "numTiempoEjec";
+            this.numTiempoEjec.Size = new System.Drawing.Size(168, 22);
+            this.numTiempoEjec.TabIndex = 28;
             // 
-            // ConfigKernel
+            // label4
             // 
-            this.ConfigKernel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ConfigKernel.HeaderText = "Kernel";
-            this.ConfigKernel.Name = "ConfigKernel";
-            // 
-            // button3
-            // 
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button3.FlatAppearance.BorderSize = 5;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button3.Location = new System.Drawing.Point(224, 314);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(142, 26);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "Cargar Procesos";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(627, 230);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(191, 16);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Tiempo total de ejecucion (ms)";
             // 
             // AñadirProceso
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(646, 389);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.numericUpDown1);
+            this.ClientSize = new System.Drawing.Size(861, 479);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.numTiempoEjec);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.btnCargarProcesos);
+            this.Controls.Add(this.checkKernel);
+            this.Controls.Add(this.btnBorrarTabla);
+            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.numPrioridadProceso);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtNombreProceso);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AñadirProceso";
             this.Text = "AñadirProceso";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numPrioridadProceso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numTiempoEjec)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,18 +204,17 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.CheckBox checkKernel;
+        private System.Windows.Forms.NumericUpDown numPrioridadProceso;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ConfigProcess;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ConfigPrioridad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ConfigKernel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtNombreProceso;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnBorrarTabla;
+        private System.Windows.Forms.Button btnCargarProcesos;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.NumericUpDown numTiempoEjec;
+        private System.Windows.Forms.Label label4;
     }
 }

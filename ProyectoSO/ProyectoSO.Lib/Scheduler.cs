@@ -244,6 +244,11 @@ namespace ProyectoSO.Lib
             }
         }
 
+        /// <summary>
+        /// Actualiza el scheduler como si hubiera pasado una cantidad de microsegundos determinada.
+        /// </summary>
+        /// <param name="tiempo">La cantidad de microsegundos determinada</param>
+        /// <returns>true si ya no hay procesos</returns>
         public bool Actualizar(uint tiempo)
         {
             lock (this._lock)
@@ -266,8 +271,8 @@ namespace ProyectoSO.Lib
                         {
                             if (this.procesosListos.Pop() is Proceso proceso)
                             {
-                                this.procesosEnEjecucion.Add(i, (proceso, this.quantum * proceso.Prioridad));
-                                procesoEjec = (proceso, this.quantum * proceso.Prioridad);
+                                this.procesosEnEjecucion.Add(i, (proceso, this.quantum));
+                                procesoEjec = (proceso, this.quantum);
                             } else
                             {
                                 continue;

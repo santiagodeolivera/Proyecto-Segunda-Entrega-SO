@@ -17,10 +17,12 @@ namespace ProyectoSO.Lib
         public readonly bool Kernel;
         public readonly uint TiempoRestante;
 
+        public static readonly uint LimiteCaracteresNombre = 10;
+
         public ProcesoPlantilla(string nombre, byte prioridad, bool kernel, uint tiempoRestante)
         {
             // Guarda contra parámetros inválidos.
-            if (string.IsNullOrWhiteSpace(nombre) || prioridad == 0 || prioridad > 99)
+            if (string.IsNullOrWhiteSpace(nombre) || prioridad == 0 || prioridad > 99 || nombre.Length == 0 || nombre.Length > LimiteCaracteresNombre)
             {
                 throw new ArgumentException();
             }
