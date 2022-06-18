@@ -106,18 +106,7 @@ namespace ProyectoSO.Lib
             {
                 if (this.procesos.TryGetValue(nombre, out var proceso))
                 {
-                    // Si el proceso pasa de bloqueado a desbloqueado,
-                    // se saca de los procesos bloqueados y se lo inserta en los procesos listos.
-                    if (proceso.Bloqueado && !datos.Bloqueado)
-                    {
-                        this.procesosBloqueados.Remove(nombre);
-                        this.procesosListos.Push(proceso);
-                        proceso.Modificar(datos);
-                        return true;
-                    }
-                    // Si el proceso pasa de desbloqueado a bloqueado,
-                    // se saca de las otras dos estructuras y se pasa a procesos bloqueados.
-                    else if (!proceso.Bloqueado && datos.Bloqueado)
+                    if (!proceso.Bloqueado && datos.Bloqueado)
                     {
                         if (!this.procesosListos.Remove(proceso))
                         {
@@ -130,18 +119,35 @@ namespace ProyectoSO.Lib
                              */
                             byte cpuId = this.procesosEnEjecucion.Where(pair => pair.Value.Item1.Nombre.Equals(nombre)).First().Key;
                             this.procesosEnEjecucion.Remove(cpuId);
-                            proceso.Modificar(datos);
-                            return true;
                         }
 
                         this.procesosBloqueados.Add(nombre, proceso);
                     }
-                    else if (proceso.Prioridad != datos.Prioridad && this.procesosListos.Remove(proceso))
+
+                    // Si el proceso pasa de bloqueado a desbloqueado,
+                    // se saca de los procesos bloqueados y se lo inserta en los procesos listos.
+                    if (proceso.Bloqueado && !datos.Bloqueado)
+                    {
+                        this.procesosBloqueados.Remove(nombre);
+                        this.procesosListos.Push(proceso);
+                    }
+
+                    proceso.Modificar(datos);
+                    /*
+                    // Si el proceso pasa de desbloqueado a bloqueado,
+                    // se saca de las otras dos estructuras y se pasa a procesos bloqueados.
+                    if (proceso.Prioridad != datos.Prioridad && !datos.Bloqueado && this.procesosListos.Remove(proceso))
                     {
                         proceso.Modificar(datos);
                         this.procesosListos.Push(proceso);
-                        return true;
                     }
+                    else
+                    {
+                        proceso.Modificar(datos);
+                    }
+                    */
+
+                    return true;
                 }
 
                 return false;
