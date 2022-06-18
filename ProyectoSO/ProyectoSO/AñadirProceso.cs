@@ -130,8 +130,8 @@ namespace ProyectoSO
 
         private void LimpiarFormulario()
         {
-            this.numTiempoEjec.Value = 0;
-            this.numPrioridadProceso.Value = 0;
+            this.numTiempoEjec.Value = 1;
+            this.numPrioridadProceso.Value = 1;
             this.txtNombreProceso.Clear();
             this.checkKernel.Checked = false;
         }

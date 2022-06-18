@@ -112,11 +112,12 @@ namespace ProyectoSO.Lib
                     {
                         this.procesosBloqueados.Remove(nombre);
                         this.procesosListos.Push(proceso);
+                        proceso.Modificar(datos);
+                        return true;
                     }
-
                     // Si el proceso pasa de desbloqueado a bloqueado,
                     // se saca de las otras dos estructuras y se pasa a procesos bloqueados.
-                    if (!proceso.Bloqueado && datos.Bloqueado)
+                    else if (!proceso.Bloqueado && datos.Bloqueado)
                     {
                         if (!this.procesosListos.Remove(proceso))
                         {
@@ -129,14 +130,18 @@ namespace ProyectoSO.Lib
                              */
                             byte cpuId = this.procesosEnEjecucion.Where(pair => pair.Value.Item1.Nombre.Equals(nombre)).First().Key;
                             this.procesosEnEjecucion.Remove(cpuId);
+                            proceso.Modificar(datos);
+                            return true;
                         }
 
                         this.procesosBloqueados.Add(nombre, proceso);
                     }
-
-
-                    proceso.Modificar(datos);
-                    return true;
+                    else if (proceso.Prioridad != datos.Prioridad && this.procesosListos.Remove(proceso))
+                    {
+                        proceso.Modificar(datos);
+                        this.procesosListos.Push(proceso);
+                        return true;
+                    }
                 }
 
                 return false;

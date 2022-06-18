@@ -126,6 +126,11 @@ namespace ProyectoSO
 
         private void Config_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (!modificaciones.Any())
+            {
+                return;
+            }
+
             DialogResult res = MessageBox.Show("¿Realizar los cambios especificados?", "", MessageBoxButtons.YesNoCancel);
             if (res == DialogResult.Yes)
             {
