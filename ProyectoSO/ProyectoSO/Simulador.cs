@@ -54,19 +54,22 @@ namespace ProyectoSO
                 listBox: this.listProcesosListos,
                 lista: this.sch.ProcesosListos(),
                 titulo: "Procesos listos",
-                formato: "{0,-" + ProcesoPlantilla.LimiteCaracteresNombre + "} P{1:D2} {2,8}",
-                propiedades: null,
+                formato: "{0,-" + ProcesoPlantilla.LimiteCaracteresNombre + "} | {1,-9} | {2,-8} | {3,-15}",
+                propiedades: new string[] { "Nombre", "Prioridad", "Kernel", "Tiempo restante" },
                 conversor: tupla =>
                 {
                     string nombre = tupla.Item1;
                     ProcesoDatos proceso = tupla.Item2;
                     return new object[]
                     {
-                        nombre, proceso.Prioridad, proceso.Kernel ? "(kernel)" : ""
+                        nombre,
+                        proceso.Prioridad.ToString("D2"),
+                        proceso.Kernel ? "(kernel)" : "",
+                        proceso.TiempoRestante + " \u00B5s"
                     };
                 });
 
-            IDictionary<byte, (string, ProcesoDatos)> procesosEnCPU = this.sch.ProcesosEnCPU();
+            IDictionary<byte, (string, ProcesoDatos, uint)> procesosEnCPU = this.sch.ProcesosEnCPU();
             List<(byte, string)> procesosEnCPUFormateados = new List<(byte, string)>(sch.CantNucleos);
             for (byte i = 0; i < sch.CantNucleos; i++)
             {
@@ -76,12 +79,18 @@ namespace ProyectoSO
                 {
                     string nombre = tupla.Item1;
                     ProcesoDatos proceso = tupla.Item2;
+                    uint tiempoRestante = tupla.Item3;
+
                     texto = string.Format(
-                        "{0,-" + ProcesoPlantilla.LimiteCaracteresNombre + "} P{1:D2} {2,8}",
-                        nombre, proceso.Prioridad, proceso.Kernel ? "(kernel)" : "");
+                        "{0,-" + ProcesoPlantilla.LimiteCaracteresNombre + "} | {1,-9} | {2,-8} | {3,-15} | {4,-13}",
+                            nombre,
+                            proceso.Prioridad,
+                            proceso.Kernel ? "(kernel)" : "",
+                            proceso.TiempoRestante + " \u00B5s",
+                            tiempoRestante + " \u00B5s");
                 } else
                 {
-                    texto = new string('-', (int)ProcesoPlantilla.LimiteCaracteresNombre + 12);
+                    texto = new string('-', (int)ProcesoPlantilla.LimiteCaracteresNombre + 57);
                 }
 
                 procesosEnCPUFormateados.Add((i, texto));
@@ -91,7 +100,17 @@ namespace ProyectoSO
                 lista: procesosEnCPUFormateados,
                 titulo: "Procesos en CPU",
                 formato: "{0,3} => {1}",
-                propiedades: null,
+                propiedades: new string[] {
+                    "CPU",
+                    string.Format(
+                        "{0,-" + ProcesoPlantilla.LimiteCaracteresNombre + "} | {1,-9} | {2,-8} | {3,-15} | {4,-13}",
+                            "Nombre",
+                            "Prioridad",
+                            "Kernel",
+                            "Tiempo restante",
+                            "Tiempo en CPU"
+                    )
+                },
                 conversor: tupla => new object[] { tupla.Item1, tupla.Item2 });
 
             this.listProcesosBloq.Items.Clear();
@@ -99,15 +118,18 @@ namespace ProyectoSO
                 listBox: this.listProcesosBloq,
                 lista: this.sch.ProcesosBloqueados(),
                 titulo: "Procesos bloqueados",
-                formato: "{0,-" + ProcesoPlantilla.LimiteCaracteresNombre + "} P{1:D2} {2,8}",
-                propiedades: null,
+                formato: "{0,-" + ProcesoPlantilla.LimiteCaracteresNombre + "} | {1,-9} | {2,-8} | {3,-15}",
+                propiedades: new string[] { "Nombre", "Prioridad", "Kernel", "Tiempo restante" },
                 conversor: tupla =>
                 {
                     string nombre = tupla.Item1;
                     ProcesoDatos proceso = tupla.Item2;
                     return new object[]
                     {
-                        nombre, proceso.Prioridad, proceso.Kernel ? "(kernel)" : ""
+                        nombre,
+                        proceso.Prioridad,
+                        proceso.Kernel ? "(kernel)" : "",
+                        proceso.TiempoRestante + " \u00B5s"
                     };
                 });
         }

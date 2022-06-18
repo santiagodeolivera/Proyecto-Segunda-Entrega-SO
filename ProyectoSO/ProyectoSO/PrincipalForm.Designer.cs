@@ -67,18 +67,48 @@ namespace ProyectoSO
             this.cantNucleosNum.Font = new System.Drawing.Font("Consolas", 12F);
             this.cantNucleosNum.Location = new System.Drawing.Point(284, 28);
             this.cantNucleosNum.Margin = new System.Windows.Forms.Padding(4);
+            this.cantNucleosNum.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.cantNucleosNum.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.cantNucleosNum.Name = "cantNucleosNum";
             this.cantNucleosNum.Size = new System.Drawing.Size(92, 31);
             this.cantNucleosNum.TabIndex = 0;
+            this.cantNucleosNum.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // quantumNum
             // 
             this.quantumNum.Font = new System.Drawing.Font("Consolas", 12F);
             this.quantumNum.Location = new System.Drawing.Point(328, 80);
             this.quantumNum.Margin = new System.Windows.Forms.Padding(4);
+            this.quantumNum.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.quantumNum.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.quantumNum.Name = "quantumNum";
             this.quantumNum.Size = new System.Drawing.Size(147, 31);
             this.quantumNum.TabIndex = 1;
+            this.quantumNum.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // iniciarBtn
             // 

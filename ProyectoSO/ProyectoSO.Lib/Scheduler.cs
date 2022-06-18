@@ -197,7 +197,7 @@ namespace ProyectoSO.Lib
             }
         }
 
-        public IDictionary<byte, (string, ProcesoDatos)> ProcesosEnCPU()
+        public IDictionary<byte, (string, ProcesoDatos, uint)> ProcesosEnCPU()
         {
             lock (this._lock)
             {
@@ -219,8 +219,9 @@ namespace ProyectoSO.Lib
                 {
                     byte cpuId = item.Key;
                     Proceso proceso = item.Value.Item1;
+                    uint tiempoRestante = item.Value.Item2;
 
-                    return new KeyValuePair<byte, (string, ProcesoDatos)>(cpuId, (proceso.Nombre, proceso.Datos));
+                    return new KeyValuePair<byte, (string, ProcesoDatos, uint)>(cpuId, (proceso.Nombre, proceso.Datos, tiempoRestante));
                 }).ToDictionary(pair => pair.Key, pair => pair.Value);
             }
         }

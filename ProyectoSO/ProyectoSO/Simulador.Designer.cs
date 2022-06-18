@@ -42,7 +42,7 @@
             // 
             this.btnIniciarDetener.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarDetener.Image = global::ProyectoSO.Properties.Resources.icons8_play_or_pause_button_48;
-            this.btnIniciarDetener.Location = new System.Drawing.Point(240, 252);
+            this.btnIniciarDetener.Location = new System.Drawing.Point(490, 252);
             this.btnIniciarDetener.Name = "btnIniciarDetener";
             this.btnIniciarDetener.Size = new System.Drawing.Size(48, 43);
             this.btnIniciarDetener.TabIndex = 0;
@@ -53,7 +53,7 @@
             // 
             this.btnAddProcesses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddProcesses.Image = global::ProyectoSO.Properties.Resources.icons8_plus_48;
-            this.btnAddProcesses.Location = new System.Drawing.Point(312, 252);
+            this.btnAddProcesses.Location = new System.Drawing.Point(562, 252);
             this.btnAddProcesses.Name = "btnAddProcesses";
             this.btnAddProcesses.Size = new System.Drawing.Size(47, 43);
             this.btnAddProcesses.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfig.Image = global::ProyectoSO.Properties.Resources.icons8_configuration_24;
-            this.btnConfig.Location = new System.Drawing.Point(381, 254);
+            this.btnConfig.Location = new System.Drawing.Point(631, 254);
             this.btnConfig.Name = "btnConfig";
             this.btnConfig.Size = new System.Drawing.Size(47, 41);
             this.btnConfig.TabIndex = 2;
@@ -80,16 +80,16 @@
             ""});
             this.listProcesosListos.Location = new System.Drawing.Point(3, 3);
             this.listProcesosListos.Name = "listProcesosListos";
-            this.listProcesosListos.Size = new System.Drawing.Size(216, 214);
+            this.listProcesosListos.Size = new System.Drawing.Size(344, 214);
             this.listProcesosListos.TabIndex = 6;
             this.listProcesosListos.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.Controls.Add(this.listProcesosBloq, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.listProcesosEjec, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.listProcesosListos, 0, 0);
@@ -97,8 +97,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(668, 234);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1168, 234);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // listProcesosBloq
@@ -108,9 +107,9 @@
             this.listProcesosBloq.ItemHeight = 15;
             this.listProcesosBloq.Items.AddRange(new object[] {
             ""});
-            this.listProcesosBloq.Location = new System.Drawing.Point(447, 3);
+            this.listProcesosBloq.Location = new System.Drawing.Point(820, 3);
             this.listProcesosBloq.Name = "listProcesosBloq";
-            this.listProcesosBloq.Size = new System.Drawing.Size(218, 214);
+            this.listProcesosBloq.Size = new System.Drawing.Size(345, 214);
             this.listProcesosBloq.TabIndex = 8;
             this.listProcesosBloq.TabStop = false;
             // 
@@ -121,19 +120,20 @@
             this.listProcesosEjec.ItemHeight = 15;
             this.listProcesosEjec.Items.AddRange(new object[] {
             ""});
-            this.listProcesosEjec.Location = new System.Drawing.Point(225, 3);
+            this.listProcesosEjec.Location = new System.Drawing.Point(353, 3);
             this.listProcesosEjec.Name = "listProcesosEjec";
-            this.listProcesosEjec.Size = new System.Drawing.Size(216, 214);
+            this.listProcesosEjec.Size = new System.Drawing.Size(461, 214);
             this.listProcesosEjec.TabIndex = 7;
             this.listProcesosEjec.TabStop = false;
             // 
             // Simulador
             // 
-            this.ClientSize = new System.Drawing.Size(682, 308);
+            this.ClientSize = new System.Drawing.Size(1182, 308);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnConfig);
             this.Controls.Add(this.btnAddProcesses);
             this.Controls.Add(this.btnIniciarDetener);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Simulador";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

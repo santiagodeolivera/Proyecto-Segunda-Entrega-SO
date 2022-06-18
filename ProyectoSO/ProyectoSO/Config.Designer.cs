@@ -85,9 +85,24 @@
             // 
             this.numPrioridad.Location = new System.Drawing.Point(20, 59);
             this.numPrioridad.Margin = new System.Windows.Forms.Padding(4);
+            this.numPrioridad.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.numPrioridad.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numPrioridad.Name = "numPrioridad";
             this.numPrioridad.Size = new System.Drawing.Size(168, 22);
             this.numPrioridad.TabIndex = 9;
+            this.numPrioridad.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnAceptar
             // 

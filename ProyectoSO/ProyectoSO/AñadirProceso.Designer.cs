@@ -58,9 +58,24 @@
             // 
             this.numPrioridadProceso.Location = new System.Drawing.Point(636, 113);
             this.numPrioridadProceso.Margin = new System.Windows.Forms.Padding(4);
+            this.numPrioridadProceso.Maximum = new decimal(new int[] {
+            99,
+            0,
+            0,
+            0});
+            this.numPrioridadProceso.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numPrioridadProceso.Name = "numPrioridadProceso";
             this.numPrioridadProceso.Size = new System.Drawing.Size(168, 22);
             this.numPrioridadProceso.TabIndex = 1;
+            this.numPrioridadProceso.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label3
             // 
@@ -161,9 +176,19 @@
             0,
             0,
             0});
+            this.numTiempoEjec.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numTiempoEjec.Name = "numTiempoEjec";
             this.numTiempoEjec.Size = new System.Drawing.Size(168, 22);
             this.numTiempoEjec.TabIndex = 3;
+            this.numTiempoEjec.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label4
             // 
