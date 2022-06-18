@@ -122,10 +122,35 @@ namespace ProyectoSO
             {
                 this.timer.Start();
                 this.btnIniciarDetener.BackColor = Color.Black;
-//                this.btnIniciarDetener
             }
-            //            this.sch.Actualizar(10);
-            //            this.actualizarListasProcesos();
+        }
+
+        private void btnConfig_Click(object sender, EventArgs e)
+        {
+            IEnumerable<(string, ProcesoDatos)> procesos = this.sch.TablaProcesos().Select(pair =>
+            {
+                string nombre = pair.Key;
+                ProcesoDatos proceso = pair.Value.Item1;
+                return (nombre, proceso);
+            });
+
+            Config config = new Config(procesos.ToList());
+
+            config.ShowDialog();
+
+            Dictionary<string, ProcesoModDatos> modificaciones = config.Modificaciones;
+            if (modificaciones == null)
+            {
+                return;
+            }
+
+            foreach (KeyValuePair<string, ProcesoModDatos> modificacion in modificaciones)
+            {
+                string nombre = modificacion.Key;
+                ProcesoModDatos modDatos = modificacion.Value;
+                this.sch.ModificarProceso(nombre, modDatos);
+            }
+            this.actualizarListasProcesos();
         }
     }
 }

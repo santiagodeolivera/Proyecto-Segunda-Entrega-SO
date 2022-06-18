@@ -20,5 +20,8 @@ namespace ProyectoSO.Lib
             Kernel = kernel;
             TiempoRestante = tiempoRestante;
         }
+
+        public ProcesoDatos Modificar(ProcesoModDatos modDatos) =>
+            new ProcesoDatos(modDatos.Prioridad, modDatos.Bloqueado, this.Kernel, this.TiempoRestante);
     }
 }

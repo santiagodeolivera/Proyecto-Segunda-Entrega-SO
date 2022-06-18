@@ -30,7 +30,7 @@
         {
             this.btnIniciarDetener = new System.Windows.Forms.Button();
             this.btnAddProcesses = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnConfig = new System.Windows.Forms.Button();
             this.listProcesosListos = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.listProcesosBloq = new System.Windows.Forms.ListBox();
@@ -60,15 +60,16 @@
             this.btnAddProcesses.UseVisualStyleBackColor = true;
             this.btnAddProcesses.Click += new System.EventHandler(this.btnAddProcesses_Click);
             // 
-            // button3
+            // btnConfig
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Image = global::ProyectoSO.Properties.Resources.icons8_configuration_24;
-            this.button3.Location = new System.Drawing.Point(381, 254);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(47, 41);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConfig.Image = global::ProyectoSO.Properties.Resources.icons8_configuration_24;
+            this.btnConfig.Location = new System.Drawing.Point(381, 254);
+            this.btnConfig.Name = "btnConfig";
+            this.btnConfig.Size = new System.Drawing.Size(47, 41);
+            this.btnConfig.TabIndex = 2;
+            this.btnConfig.UseVisualStyleBackColor = true;
+            this.btnConfig.Click += new System.EventHandler(this.btnConfig_Click);
             // 
             // listProcesosListos
             // 
@@ -130,7 +131,7 @@
             // 
             this.ClientSize = new System.Drawing.Size(682, 308);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnConfig);
             this.Controls.Add(this.btnAddProcesses);
             this.Controls.Add(this.btnIniciarDetener);
             this.Name = "Simulador";
@@ -141,10 +142,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button config;
         private System.Windows.Forms.Button btnIniciarDetener;
         private System.Windows.Forms.Button btnAddProcesses;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnConfig;
         private System.Windows.Forms.ListBox listProcesosListos;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.ListBox listProcesosBloq;

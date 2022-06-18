@@ -93,14 +93,14 @@ namespace ProyectoSO
                 return;
             }
 
-            bool kernel = this.checkKernel.Checked;
-
             if (Utils.ChequearInput(
                 this.lista.Any(plantilla => plantilla.Nombre.Equals(nombre)),
                 "Ya hay un proceso con el nombre especificado."))
             {
                 return;
             }
+
+            bool kernel = this.checkKernel.Checked;
 
             this.lista.AddLast(new ProcesoPlantilla(nombre, prioridad, kernel, tiempoEjec));
 
@@ -124,7 +124,7 @@ namespace ProyectoSO
                     plantilla.Kernel ? "(kernel)" : "",
                     plantilla.Nombre,
                     plantilla.Prioridad,
-                    plantilla.TiempoRestante
+                    plantilla.TiempoRestante + " \u00B5s"
                 });
         }
 
