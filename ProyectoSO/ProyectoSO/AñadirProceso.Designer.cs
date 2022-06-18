@@ -171,15 +171,15 @@
             this.label4.Location = new System.Drawing.Point(633, 230);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(191, 16);
+            this.label4.Size = new System.Drawing.Size(266, 16);
             this.label4.TabIndex = 29;
-            this.label4.Text = "Tiempo total de ejecucion (ms)";
+            this.label4.Text = "Tiempo total de ejecucion (microsegundos)";
             // 
             // AñadirProceso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 418);
+            this.ClientSize = new System.Drawing.Size(902, 418);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.numTiempoEjec);
             this.Controls.Add(this.listBox1);

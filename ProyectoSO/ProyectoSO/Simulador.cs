@@ -14,12 +14,21 @@ namespace ProyectoSO
     public partial class Simulador : Form
     {
         private readonly Scheduler sch;
+        private Timer timer = new Timer();
 
         public Simulador(Scheduler sch)
         {
             InitializeComponent();
             this.sch = sch;
             this.actualizarListasProcesos();
+
+            timer.Interval = 250;
+            timer.Stop();
+            timer.Tick += (sender, e) =>
+            {
+                this.sch.Actualizar(10);
+                this.actualizarListasProcesos();
+            };
         }
         private void btnAddProcesses_Click(object sender, EventArgs e)
         {
@@ -86,12 +95,37 @@ namespace ProyectoSO
                 conversor: tupla => new object[] { tupla.Item1, tupla.Item2 });
 
             this.listProcesosBloq.Items.Clear();
+            Utils.CargarLista(
+                listBox: this.listProcesosBloq,
+                lista: this.sch.ProcesosBloqueados(),
+                titulo: "Procesos bloqueados",
+                formato: "{0,-" + ProcesoPlantilla.LimiteCaracteresNombre + "} P{1:D2} {2,8}",
+                propiedades: null,
+                conversor: tupla =>
+                {
+                    string nombre = tupla.Item1;
+                    ProcesoDatos proceso = tupla.Item2;
+                    return new object[]
+                    {
+                        nombre, proceso.Prioridad, proceso.Kernel ? "(kernel)" : ""
+                    };
+                });
         }
 
         private void btnIniciarDetener_Click(object sender, EventArgs e)
         {
-            this.sch.Actualizar(10);
-            this.actualizarListasProcesos();
+            if (this.timer.Enabled)
+            {
+                this.timer.Stop();
+                this.btnIniciarDetener.BackColor = Color.FromName("Control");
+            } else
+            {
+                this.timer.Start();
+                this.btnIniciarDetener.BackColor = Color.Black;
+//                this.btnIniciarDetener
+            }
+            //            this.sch.Actualizar(10);
+            //            this.actualizarListasProcesos();
         }
     }
 }

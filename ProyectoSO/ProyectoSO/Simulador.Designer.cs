@@ -40,6 +40,7 @@
             // 
             // btnIniciarDetener
             // 
+            this.btnIniciarDetener.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIniciarDetener.Image = global::ProyectoSO.Properties.Resources.icons8_play_or_pause_button_48;
             this.btnIniciarDetener.Location = new System.Drawing.Point(240, 252);
             this.btnIniciarDetener.Name = "btnIniciarDetener";
@@ -50,6 +51,7 @@
             // 
             // btnAddProcesses
             // 
+            this.btnAddProcesses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddProcesses.Image = global::ProyectoSO.Properties.Resources.icons8_plus_48;
             this.btnAddProcesses.Location = new System.Drawing.Point(312, 252);
             this.btnAddProcesses.Name = "btnAddProcesses";
@@ -60,6 +62,7 @@
             // 
             // button3
             // 
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Image = global::ProyectoSO.Properties.Resources.icons8_configuration_24;
             this.button3.Location = new System.Drawing.Point(381, 254);
             this.button3.Name = "button3";
