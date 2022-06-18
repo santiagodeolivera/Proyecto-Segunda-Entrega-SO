@@ -113,7 +113,6 @@ namespace ProyectoSO
                 },
                 conversor: tupla => new object[] { tupla.Item1, tupla.Item2 });
 
-            this.listProcesosBloq.Items.Clear();
             Utils.CargarLista(
                 listBox: this.listProcesosBloq,
                 lista: this.sch.ProcesosBloqueados(),

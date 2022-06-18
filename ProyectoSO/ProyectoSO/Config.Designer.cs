@@ -124,6 +124,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(64, 59);
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // checkBloqueado
             // 
