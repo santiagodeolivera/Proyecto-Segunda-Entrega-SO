@@ -69,7 +69,7 @@ namespace ProyectoSO
             this.cantNucleosNum.Margin = new System.Windows.Forms.Padding(4);
             this.cantNucleosNum.Name = "cantNucleosNum";
             this.cantNucleosNum.Size = new System.Drawing.Size(92, 31);
-            this.cantNucleosNum.TabIndex = 2;
+            this.cantNucleosNum.TabIndex = 0;
             // 
             // quantumNum
             // 
@@ -78,7 +78,7 @@ namespace ProyectoSO
             this.quantumNum.Margin = new System.Windows.Forms.Padding(4);
             this.quantumNum.Name = "quantumNum";
             this.quantumNum.Size = new System.Drawing.Size(147, 31);
-            this.quantumNum.TabIndex = 3;
+            this.quantumNum.TabIndex = 1;
             // 
             // iniciarBtn
             // 
@@ -87,7 +87,7 @@ namespace ProyectoSO
             this.iniciarBtn.Margin = new System.Windows.Forms.Padding(4);
             this.iniciarBtn.Name = "iniciarBtn";
             this.iniciarBtn.Size = new System.Drawing.Size(147, 63);
-            this.iniciarBtn.TabIndex = 4;
+            this.iniciarBtn.TabIndex = 2;
             this.iniciarBtn.Text = "Iniciar";
             this.iniciarBtn.UseVisualStyleBackColor = true;
             this.iniciarBtn.Click += new System.EventHandler(this.IniciarBtn_Click);
@@ -100,7 +100,7 @@ namespace ProyectoSO
             this.limpiarBtn.Margin = new System.Windows.Forms.Padding(4);
             this.limpiarBtn.Name = "limpiarBtn";
             this.limpiarBtn.Size = new System.Drawing.Size(147, 63);
-            this.limpiarBtn.TabIndex = 5;
+            this.limpiarBtn.TabIndex = 3;
             this.limpiarBtn.Text = "Limpiar";
             this.limpiarBtn.UseVisualStyleBackColor = true;
             this.limpiarBtn.Click += new System.EventHandler(this.LimpiarBtn_Click);

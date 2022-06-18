@@ -22,13 +22,13 @@ namespace ProyectoSO.Lib
         /// <summary>
         /// La cantidad de núcleos del scheduler.
         /// </summary>
-        private readonly byte cantNucleos;
+        public readonly byte CantNucleos;
 
         /// <summary>
         /// La cantidad de microsegundos del quantum.
         /// El quantum es la cantidad de tiempo en la cual un proceso se encuentra en CPU antes de salir por timeout.
         /// </summary>
-        private readonly uint quantum;
+        public readonly uint Quantum;
 
         /// <summary>
         /// La cola de procesos listos.
@@ -55,8 +55,8 @@ namespace ProyectoSO.Lib
                 throw new ArgumentException();
             }
 
-            this.cantNucleos = cantNucleos;
-            this.quantum = quantum;
+            this.CantNucleos = cantNucleos;
+            this.Quantum = quantum;
         }
 
         /// <summary>
@@ -264,15 +264,15 @@ namespace ProyectoSO.Lib
                 {
                     // Chequear cuánto tiempo se mantienen todos los procesos en la CPU sin hacer ningún cambio.
                     uint min = tiempo;
-                    for (byte i = 0; i < cantNucleos; i++)
+                    for (byte i = 0; i < CantNucleos; i++)
                     {
                         // Si hay CPUs sin procesos y procesos en la cola, se los asignan
                         if (!this.procesosEnEjecucion.TryGetValue(i, out var procesoEjec))
                         {
                             if (this.procesosListos.Pop() is Proceso proceso)
                             {
-                                this.procesosEnEjecucion.Add(i, (proceso, this.quantum));
-                                procesoEjec = (proceso, this.quantum);
+                                this.procesosEnEjecucion.Add(i, (proceso, this.Quantum));
+                                procesoEjec = (proceso, this.Quantum);
                             } else
                             {
                                 continue;
@@ -288,7 +288,7 @@ namespace ProyectoSO.Lib
 
                     // Restar a la cantidad de tiempo de cada proceso el mínimo encontrado,
                     // y a los que se les acabe el tiempo, son colocados en la cola de procesos listos.
-                    for (byte i = 0; i < cantNucleos; i++)
+                    for (byte i = 0; i < CantNucleos; i++)
                     {
                         if (!this.procesosEnEjecucion.TryGetValue(i, out var procesoEjec))
                         {

@@ -4,8 +4,6 @@ namespace ProyectoSO
 {
     public partial class PrincipalForm : Form
     {
-        private Simulador simulador = null;
-
         public PrincipalForm()
         {
             InitializeComponent();
@@ -27,22 +25,18 @@ namespace ProyectoSO
             byte cantNucleos;
             {
                 decimal cantNucleosDec = this.cantNucleosNum.Value;
-                if (cantNucleosDec <= 0 || cantNucleosDec > decimal.MaxValue)
+                if (Utils.ChequearInput(
+                    cantNucleosDec <= 0 || cantNucleosDec > decimal.MaxValue,
+                    "La cantidad de núcleos debe ser entre 1 y 255."))
                 {
-                    MessageBox.Show(
-                        "La cantidad de núcleos debe ser entre 1 y 255.", "",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     return;
                 }
 
                 cantNucleos = (byte)cantNucleosDec;
-                if (cantNucleos != cantNucleosDec)
+                if (Utils.ChequearInput(
+                    cantNucleos != cantNucleosDec,
+                    "La cantidad de núcleos no puede ser un número decimal."))
                 {
-                    MessageBox.Show(
-                        "La cantidad de núcleos no puede ser un número decimal.", "",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     return;
                 }
             }
@@ -50,38 +44,31 @@ namespace ProyectoSO
             uint quantum;
             {
                 decimal quantumDec = this.quantumNum.Value;
-                if (quantumDec <= 0)
+                if (Utils.ChequearInput(
+                    quantumDec <= 0,
+                    "El quantum debe ser una cantidad positiva."))
                 {
-                    MessageBox.Show(
-                        "El quantum debe ser una cantidad positiva.", "",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     return;
                 }
 
-                if (quantumDec > uint.MaxValue)
+                if (Utils.ChequearInput(
+                    quantumDec > uint.MaxValue,
+                    "El quantum dado es demasiado grande para el programa."))
                 {
-                    MessageBox.Show(
-                        "El quantum dado es demasiado grande para el programa.", "",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     return;
                 }
 
                 quantum = (uint)quantumDec;
-                if (quantum != quantumDec)
+                if (Utils.ChequearInput(
+                    quantum != quantumDec,
+                    "El quantum no puede ser un número decimal."))
                 {
-                    MessageBox.Show(
-                        "El quantum no puede ser un número decimal.", "",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     return;
                 }
-
             }
 
-            this.simulador = new Simulador(new Lib.Scheduler(cantNucleos, quantum));
-            this.simulador.ShowDialog();
+            Simulador simulador = new Simulador(new Lib.Scheduler(cantNucleos, quantum));
+            simulador.ShowDialog();
         }
     }
 }

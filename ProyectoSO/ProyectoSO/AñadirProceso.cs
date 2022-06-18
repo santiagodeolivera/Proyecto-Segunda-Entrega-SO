@@ -20,11 +20,8 @@ namespace ProyectoSO
         public AñadirProceso()
         {
             InitializeComponent();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            this.txtNombreProceso.MaxLength = (int)ProcesoPlantilla.LimiteCaracteresNombre;
+            this.ActualizarListBox();
         }
 
         private void btnCargarProcesos_Click(object sender, EventArgs e)
@@ -32,28 +29,23 @@ namespace ProyectoSO
             this.Lista = this.lista;
             this.Close();
         }
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             uint tiempoEjec;
             {
                 decimal tiempoEjecDec = this.numTiempoEjec.Value;
-                if (tiempoEjecDec <= 0)
+                if (Utils.ChequearInput(
+                    tiempoEjecDec <= 0,
+                    "El tiempo de ejecucion de un proceso debe ser positivo."))
                 {
-                    MessageBox.Show(
-                        "El tiempo de ejecucion de un proceso debe ser positivo.", "",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     return;
                 }
 
                 tiempoEjec = (uint)tiempoEjecDec;
-                if (tiempoEjec != tiempoEjecDec)
+                if (Utils.ChequearInput(
+                    tiempoEjec != tiempoEjecDec,
+                    "El tiempo de ejecucion de un proceso no puede ser un número decimal."))
                 {
-                    MessageBox.Show(
-                        "El tiempo de ejecucion de un proceso no puede ser un número decimal.", "",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     return;
                 }
             }
@@ -61,62 +53,52 @@ namespace ProyectoSO
             byte prioridad;
             {
                 decimal prioridadDec = this.numPrioridadProceso.Value;
-                if (prioridadDec <= 0)
+                if (Utils.ChequearInput(
+                    prioridadDec <= 0,
+                    "La prioridad de un proceso debe ser positiva."))
                 {
-                    MessageBox.Show(
-                        "La prioridad de un proceso debe ser positiva.", "",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     return;
                 }
 
-                if (prioridadDec > 99)
+                if (Utils.ChequearInput(
+                    prioridadDec > 99,
+                    "La prioridad debe ser un número entre 1 y 99."))
                 {
-                    MessageBox.Show(
-                        "La prioridad debe ser un número entre 1 y 99.", "",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     return;
                 }
 
                 prioridad = (byte)prioridadDec;
-                if (prioridad != prioridadDec)
+                if (Utils.ChequearInput(
+                    prioridad != prioridadDec,
+                    "Este simulador no permite que el tiempo de ejecucion de " +
+                            "un proceso no puede ser un número decimal."))
                 {
-                    MessageBox.Show(
-                        "Este simulador no permite que el tiempo de ejecucion de " + 
-                            "un proceso no puede ser un número decimal.", "",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     return;
                 }
-
             }
 
             string nombre = this.txtNombreProceso.Text.Trim();
-            if (string.IsNullOrWhiteSpace(nombre) || nombre.Length == 0)
+            if (Utils.ChequearInput(
+                string.IsNullOrWhiteSpace(nombre) || nombre.Length == 0,
+                "El nombre del proceso es requerido."))
             {
-                MessageBox.Show(
-                        "El nombre del proceso es requerido.", "",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (nombre.Length > ProcesoPlantilla.LimiteCaracteresNombre)
+            if (Utils.ChequearInput(
+                nombre.Length > ProcesoPlantilla.LimiteCaracteresNombre,
+                "El nombre del proceso no puede tener más de "
+                            + ProcesoPlantilla.LimiteCaracteresNombre + " caracteres."))
             {
-                MessageBox.Show(
-                        "El nombre del proceso no puede tener más de "
-                            + ProcesoPlantilla.LimiteCaracteresNombre + " caracteres.", "",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             bool kernel = this.checkKernel.Checked;
 
-            if (this.lista.Any(plantilla => plantilla.Nombre.Equals(nombre)))
+            if (Utils.ChequearInput(
+                this.lista.Any(plantilla => plantilla.Nombre.Equals(nombre)),
+                "Ya hay un proceso con el nombre especificado."))
             {
-                MessageBox.Show(
-                        "Ya hay un proceso con el nombre especificado.", "",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -131,25 +113,19 @@ namespace ProyectoSO
         /// </summary>
         private void ActualizarListBox()
         {
-            // Limpiar el contenido actual
-            this.listBox1.Items.Clear();
-
-            // Mostrar cada plantilla por separado
-            this.listBox1.Items.Add(
-                string.Format(
-                    "Kernel    {0,-" + ProcesoPlantilla.LimiteCaracteresNombre + "}    Prioridad    Tiempo de ejecucion",
-                    "nombre"));
-            foreach (ProcesoPlantilla plantilla in this.lista)
-            {
-                string elemento = string.Format(
-                    "{0,8}  {1,-" + ProcesoPlantilla.LimiteCaracteresNombre + "}    {2,-9:D2}    {3,5} ms",
+            Utils.CargarLista(
+                listBox: this.listBox1,
+                lista: this.lista,
+                titulo: "Procesos a añadir",
+                formato: "{0,-8}  {1,-" + ProcesoPlantilla.LimiteCaracteresNombre + "}    {2,-9}    {3,-19}",
+                propiedades: new string[]{ "Kernel", "Nombre", "Prioridad", "Tiempo de ejecucion" },
+                conversor: plantilla => new object[]
+                {
                     plantilla.Kernel ? "(kernel)" : "",
                     plantilla.Nombre,
                     plantilla.Prioridad,
-                    plantilla.TiempoRestante);
-
-                this.listBox1.Items.Add(elemento);
-            }
+                    plantilla.TiempoRestante
+                });
         }
 
         private void LimpiarFormulario()

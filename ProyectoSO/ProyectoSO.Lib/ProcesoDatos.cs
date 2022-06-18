@@ -11,12 +11,14 @@ namespace ProyectoSO.Lib
         public readonly byte Prioridad;
         public readonly bool Bloqueado;
         public readonly bool Kernel;
+        public readonly uint TiempoRestante;
 
-        public ProcesoDatos(byte prioridad, bool bloqueado, bool kernel)
+        public ProcesoDatos(byte prioridad, bool bloqueado, bool kernel, uint tiempoRestante)
         {
             Prioridad = prioridad;
             Bloqueado = bloqueado;
             Kernel = kernel;
+            TiempoRestante = tiempoRestante;
         }
     }
 }

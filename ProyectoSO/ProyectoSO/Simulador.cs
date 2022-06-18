@@ -19,53 +19,8 @@ namespace ProyectoSO
         {
             InitializeComponent();
             this.sch = sch;
+            this.actualizarListasProcesos();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void procesosBloqueadosList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Simulador_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button1_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAddProcesses_Click(object sender, EventArgs e)
         {
             AñadirProceso añadirProceso = new AñadirProceso();
@@ -86,19 +41,57 @@ namespace ProyectoSO
 
         private void actualizarListasProcesos()
         {
-            this.listProcesosListos.Items.Clear();
-            this.listProcesosEjec.Items.Clear();
-            this.listProcesosBloq.Items.Clear();
+            Utils.CargarLista(
+                listBox: this.listProcesosListos,
+                lista: this.sch.ProcesosListos(),
+                titulo: "Procesos listos",
+                formato: "{0,-" + ProcesoPlantilla.LimiteCaracteresNombre + "} P{1:D2} {2,8}",
+                propiedades: null,
+                conversor: tupla =>
+                {
+                    string nombre = tupla.Item1;
+                    ProcesoDatos proceso = tupla.Item2;
+                    return new object[]
+                    {
+                        nombre, proceso.Prioridad, proceso.Kernel ? "(kernel)" : ""
+                    };
+                });
 
-            IList<(string, ProcesoDatos)> procesosListos = this.sch.ProcesosListos();
-            this.listProcesosListos.Items.Add("Procesos listos:");
-            foreach ((string nombre, ProcesoDatos proceso) in procesosListos)
+            IDictionary<byte, (string, ProcesoDatos)> procesosEnCPU = this.sch.ProcesosEnCPU();
+            List<(byte, string)> procesosEnCPUFormateados = new List<(byte, string)>(sch.CantNucleos);
+            for (byte i = 0; i < sch.CantNucleos; i++)
             {
-                string elemento = string.Format(
-                    "{0,-" + ProcesoPlantilla.LimiteCaracteresNombre + "} P{1:D2} {2,8}",
-                    nombre, proceso.Prioridad, proceso.Kernel ? "(kernel)" : "");
-                this.listProcesosListos.Items.Add(elemento);
+                string texto;
+
+                if (procesosEnCPU.TryGetValue(i, out var tupla))
+                {
+                    string nombre = tupla.Item1;
+                    ProcesoDatos proceso = tupla.Item2;
+                    texto = string.Format(
+                        "{0,-" + ProcesoPlantilla.LimiteCaracteresNombre + "} P{1:D2} {2,8}",
+                        nombre, proceso.Prioridad, proceso.Kernel ? "(kernel)" : "");
+                } else
+                {
+                    texto = new string('-', (int)ProcesoPlantilla.LimiteCaracteresNombre + 12);
+                }
+
+                procesosEnCPUFormateados.Add((i, texto));
             }
+            Utils.CargarLista(
+                listBox: this.listProcesosEjec,
+                lista: procesosEnCPUFormateados,
+                titulo: "Procesos en CPU",
+                formato: "{0,3} => {1}",
+                propiedades: null,
+                conversor: tupla => new object[] { tupla.Item1, tupla.Item2 });
+
+            this.listProcesosBloq.Items.Clear();
+        }
+
+        private void btnIniciarDetener_Click(object sender, EventArgs e)
+        {
+            this.sch.Actualizar(10);
+            this.actualizarListasProcesos();
         }
     }
 }
