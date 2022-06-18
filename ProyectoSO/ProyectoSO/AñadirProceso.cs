@@ -117,7 +117,7 @@ namespace ProyectoSO
                 listBox: this.listBox1,
                 lista: this.lista,
                 titulo: "Procesos a añadir",
-                formato: "{0,-8}  {1,-" + ProcesoPlantilla.LimiteCaracteresNombre + "}    {2,-9}    {3,-19}",
+                formato: "{0,-8} | {1,-" + ProcesoPlantilla.LimiteCaracteresNombre + "} | {2,-9} | {3,-19}",
                 propiedades: new string[]{ "Kernel", "Nombre", "Prioridad", "Tiempo de ejecucion" },
                 conversor: plantilla => new object[]
                 {

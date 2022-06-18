@@ -22,7 +22,7 @@ namespace ProyectoSO
             this.sch = sch;
             this.actualizarListasProcesos();
 
-            timer.Interval = 250;
+            timer.Interval = 500;
             timer.Stop();
             timer.Tick += (sender, e) =>
             {
