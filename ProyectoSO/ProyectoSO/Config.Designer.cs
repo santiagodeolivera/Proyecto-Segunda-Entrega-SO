@@ -34,7 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.numPrioridad = new System.Windows.Forms.NumericUpDown();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.checkBloqueado = new System.Windows.Forms.CheckBox();
             this.listProcesos = new System.Windows.Forms.ListBox();
             this.pnlForm = new System.Windows.Forms.Panel();
@@ -107,24 +106,13 @@
             // btnAceptar
             // 
             this.btnAceptar.Image = global::ProyectoSO.Properties.Resources.icons8_done_48;
-            this.btnAceptar.Location = new System.Drawing.Point(20, 156);
+            this.btnAceptar.Location = new System.Drawing.Point(71, 162);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(64, 59);
             this.btnAceptar.TabIndex = 14;
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Image = global::ProyectoSO.Properties.Resources.icons8_close_48;
-            this.btnCancelar.Location = new System.Drawing.Point(124, 156);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(64, 59);
-            this.btnCancelar.TabIndex = 15;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // checkBloqueado
             // 
@@ -152,7 +140,6 @@
             // pnlForm
             // 
             this.pnlForm.Controls.Add(this.btnAceptar);
-            this.pnlForm.Controls.Add(this.btnCancelar);
             this.pnlForm.Controls.Add(this.label2);
             this.pnlForm.Controls.Add(this.numPrioridad);
             this.pnlForm.Controls.Add(this.checkBloqueado);
@@ -191,7 +178,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numPrioridad;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.CheckBox checkBloqueado;
         private System.Windows.Forms.ListBox listProcesos;
         private System.Windows.Forms.Panel pnlForm;

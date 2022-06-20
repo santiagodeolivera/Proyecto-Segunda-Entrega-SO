@@ -145,5 +145,29 @@ namespace ProyectoSO
                 this.ActualizarListBox();
             }
         }
+
+        private void AñadirProceso_Load(object sender, EventArgs e)
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(this.btnBorrarTabla, "Este bot\u00F3n borra todos los procesos en el buffer.");
+        }
+
+        private void AñadirProceso_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!lista.Any())
+            {
+                return;
+            }
+
+            DialogResult res = MessageBox.Show("¿Insertar los procesos en el scheduler?", "", MessageBoxButtons.YesNoCancel);
+            if (res == DialogResult.Yes)
+            {
+                this.Lista = this.lista;
+            }
+            else if (res != DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

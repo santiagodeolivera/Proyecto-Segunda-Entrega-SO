@@ -36,7 +36,6 @@
             this.txtNombreProceso = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnBorrarTabla = new System.Windows.Forms.Button();
-            this.btnCargarProcesos = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.numTiempoEjec = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
@@ -138,22 +137,6 @@
             this.btnBorrarTabla.UseVisualStyleBackColor = true;
             this.btnBorrarTabla.Click += new System.EventHandler(this.btnBorrarTabla_Click);
             // 
-            // btnCargarProcesos
-            // 
-            this.btnCargarProcesos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnCargarProcesos.FlatAppearance.BorderSize = 5;
-            this.btnCargarProcesos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Gray;
-            this.btnCargarProcesos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnCargarProcesos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCargarProcesos.Location = new System.Drawing.Point(205, 368);
-            this.btnCargarProcesos.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCargarProcesos.Name = "btnCargarProcesos";
-            this.btnCargarProcesos.Size = new System.Drawing.Size(189, 32);
-            this.btnCargarProcesos.TabIndex = 6;
-            this.btnCargarProcesos.Text = "Cargar Procesos";
-            this.btnCargarProcesos.UseVisualStyleBackColor = true;
-            this.btnCargarProcesos.Click += new System.EventHandler(this.btnCargarProcesos_Click);
-            // 
             // listBox1
             // 
             this.listBox1.Font = new System.Drawing.Font("Consolas", 8F);
@@ -208,7 +191,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.numTiempoEjec);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.btnCargarProcesos);
             this.Controls.Add(this.checkKernel);
             this.Controls.Add(this.btnBorrarTabla);
             this.Controls.Add(this.btnAceptar);
@@ -221,6 +203,8 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AñadirProceso";
             this.Text = "AñadirProceso";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AñadirProceso_FormClosing);
+            this.Load += new System.EventHandler(this.AñadirProceso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numPrioridadProceso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numTiempoEjec)).EndInit();
             this.ResumeLayout(false);
@@ -238,7 +222,6 @@
         private System.Windows.Forms.TextBox txtNombreProceso;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnBorrarTabla;
-        private System.Windows.Forms.Button btnCargarProcesos;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.NumericUpDown numTiempoEjec;
         private System.Windows.Forms.Label label4;
